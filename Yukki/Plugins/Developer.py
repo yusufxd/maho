@@ -19,17 +19,17 @@ from Yukki.Utilities.tasks import add_task, rm_task
 
 # Eval and Sh module from WBB
 
-__MODULE__ = "Yayın"
+__MODULE__ = "Reklam"
 __HELP__ = """
 **Not:**
 Sadece Yönetici Kullanıcıları için
 
 
-/broadcast [Mesaj veya Mesaja Cevap Verme]
+/reklam [Mesaj veya Mesaja Cevap Verme]
 - Bot'un Servis Sohbetlerine herhangi bir mesaj yayınlayın.
 
 
-/broadcast_pin [Mesaj veya Mesaja Cevap Verme]
+/reklam_pin [Mesaj veya Mesaja Cevap Verme]
 - Sohbete Sabitlenen mesajla Botun Servis Edilen Sohbetlerine herhangi bir mesaj yayınlayın [Devre Dışı Bildirimler].
 
 /broadcast_pin_loud [Mesaj veya Mesaja Cevap Verme]
