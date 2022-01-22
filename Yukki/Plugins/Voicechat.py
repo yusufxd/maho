@@ -18,7 +18,7 @@ from Yukki.Utilities.assistant import get_assistant_details
 
 loop = asyncio.get_event_loop()
 
-__MODULE__ = "Join/Leave"
+__MODULE__ = "Katıl/Ayrıl"
 __HELP__ = """
 
 **Not:**
@@ -107,22 +107,22 @@ async def activevc(_, message: Message):
         current_playing = fetched[0][0]
         user_name = fetched[0][1]
 
-        msg = "**Kuyruğa Atılmış Liste**\n\n"
-        msg += "**Şu Anda Yürüten:**"
+        msg = "**𝗞𝘂𝘆𝗿𝘂𝗴̆𝗮 𝗔𝘁𝗶𝗹𝗺𝗶𝘀̧ 𝗟𝗶𝘀𝘁𝗲**\n\n"
+        msg += "**𝗦̧𝘂 𝗔𝗻𝗱𝗮 𝗬𝘂̈𝗿𝘂̈𝘁𝗲𝗻:**"
         msg += "\n▶️" + current_playing[:30]
-        msg += f"\n   ╚By:- {user_name}"
-        msg += f"\n   ╚Duration:- Kalan `{dur_left}` dışında `{duration_min}` Dakika."
+        msg += f"\n   ╚𝗧𝗮𝗿𝗮𝗳𝗶𝗻𝗱𝗮𝗻:- {user_name}"
+        msg += f"\n   ╚𝗦𝘂̈𝗿𝗲:- 𝗞𝗮𝗹𝗮𝗻 `{dur_left}` 𝗱𝗶𝘀̧𝗶𝗻𝗱𝗮 `{duration_min}` 𝗗𝗮𝗸𝗶𝗸𝗮."
         fetched.pop(0)
         if fetched:
             msg += "\n\n"
-            msg += "**Sıradaki Yukarı:**"
+            msg += "**𝗦𝗶𝗿𝗮𝗱𝗮𝗸𝗶 𝗬𝘂𝗸𝗮𝗿𝗶:**"
             for song in fetched:
                 name = song[0][:30]
                 usr = song[1]
                 dur = song[2]
                 msg += f"\n⏸️{name}"
-                msg += f"\n   ╠Süresi : {dur}"
-                msg += f"\n   ╚Talep eden : {usr}\n"
+                msg += f"\n   ╠𝗦𝘂̈𝗿𝗲𝘀𝗶 : {dur}"
+                msg += f"\n   ╚𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻 : {usr}\n"
         if len(msg) > 4096:
             await mystic.delete()
             filename = "queue.txt"
@@ -130,7 +130,7 @@ async def activevc(_, message: Message):
                 out_file.write(str(msg.strip()))
             await message.reply_document(
                 document=filename,
-                caption=f"**OUTPUT:**\n\n`Kuyruğa Atılmış Liste`",
+                caption=f"**Çıktı:**\n\n`Kuyruğa Atılmış Liste`",
                 quote=False,
             )
             os.remove(filename)
@@ -165,10 +165,10 @@ async def activevc(_, message: Message):
             text += f"<b>{j + 1}. {title}</b> [`{x}`]\n"
         j += 1
     if not text:
-        await message.reply_text("No Active Voice Chats")
+        await message.reply_text("𝗘𝘁𝗸𝗶𝗻 𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁 𝗬𝗼𝗸")
     else:
         await message.reply_text(
-            f"**Active Voice Chats:-**\n\n{text}",
+            f"**𝗘𝘁𝗸𝗶𝗻 𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁𝗹𝗲𝗿:-**\n\n{text}",
             disable_web_page_preview=True,
         )
 
@@ -198,10 +198,10 @@ async def activevi_(_, message: Message):
             text += f"<b>{j + 1}. {title}</b> [`{x}`]\n"
         j += 1
     if not text:
-        await message.reply_text("Etkin Sesli Sohbet Yok")
+        await message.reply_text("𝗘𝘁𝗸𝗶𝗻 𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁 𝗬𝗼𝗸")
     else:
         await message.reply_text(
-            f"**Active Video Calls:-**\n\n{text}",
+            f"**𝗘𝘁𝗸𝗶𝗻 𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁𝗹𝗲𝗿:-**\n\n{text}",
             disable_web_page_preview=True,
         )
 
