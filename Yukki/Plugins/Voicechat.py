@@ -116,7 +116,7 @@ async def activevc(_, message: Message):
         if fetched:
             msg += "\n\n"
             msg += "**Sıradaki Yukarı:**"
-            getirilen şarkı için:
+            for song in fetched:
                 name = song[0][:30]
                 usr = song[1]
                 dur = song[2]
