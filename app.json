@@ -110,12 +110,12 @@
     },
     "UPSTREAM_REPO": {
       "description": "If you dont know this, Leave as it is",
-      "value": "https://github.com/NotReallyShikhar/YukkiMusicBot",
+      "value": "https://github.com/kuralsiz47/YukkiMusicBot.git",
       "required": true
     },
     "UPSTREAM_BRANCH": {
       "description": "Repo's Branch Name",
-      "value": "master",
+      "value": "main",
       "required": true
     }
   },
