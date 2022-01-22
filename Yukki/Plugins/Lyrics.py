@@ -80,10 +80,10 @@ async def lyricssex(_, CallbackQuery):
         await CallbackQuery.message.reply_text(xxx)
 
 
-@app.on_message(filters.command("lyrics"))
+@app.on_message(filters.command("söz"))
 async def lrsearch(_, message: Message):
     if len(message.command) < 2:
-        return await message.reply_text("**𝗞𝘂𝗹𝗹𝗮𝗻𝗶𝗺:**\n│\n╰/lyrics [ Müzik adı]")
+        return await message.reply_text("**𝗞𝘂𝗹𝗹𝗮𝗻𝗶𝗺:**\n│\n╰/söz [ Müzik adı]")
     m = await message.reply_text("Searching Lyrics")
     query = message.text.split(None, 1)[1]
     x = "OXaVabSRKQLqwpiYOn-E4Y7k3wj-TNdL5RfDPXlnXhCErbcqVvdCF-WnMR5TBctI"
