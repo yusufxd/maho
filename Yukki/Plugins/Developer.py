@@ -6,7 +6,7 @@ import traceback
 from html import escape
 from inspect import getfullargspec
 from io  import StringIO
-from time import 
+from time import time
 
 from pyrogram import filters
 from pyrogram.errors import MessageNotModified
