@@ -20,28 +20,27 @@ __MODULE__ = "SudoUsers"
 __HELP__ = """
 
 
-/sudolist 
-    Check the sudo user list of Bot. 
+/sudolistname 
+ Botun sudo kullanıcı listesini kontrol edin. 
+ 
+ 
+**Not:**
+Sadece Sudo Kullanıcıları için. 
 
+/addsudo [Kullanıcı adı veya Kullanıcıya yanıt]
+- Botun Sudo Kullanıcılarına Bir Kullanıcı Eklemek İçin.
 
-**Note:**
-Only for Sudo Users. 
-
-
-/addsudo [Username or Reply to a user]
-- To Add A User In Bot's Sudo Users.
-
-/delsudo [Username or Reply to a user]
-- To Remove A User from Bot's Sudo Users.
+/delsudo [Kullanıcı adı veya Kullanıcıya yanıt]
+- Bir Kullanıcıyı Botun Sudo Kullanıcılarından Kaldırmak İçin.
 
 /maintenance [enable / disable]
-- When enabled Bot goes under maintenance mode. No one can play Music now!
+- Etkinleştirildiğinde Bot bakım moduna geçer. Artık kimse müzik çalamaz!
 
 /logger [enable / disable]
-- When enabled Bot logs the searched queries in logger group.
+- Etkinleştirildiğinde Bot, aranan sorguları logger grubunda günlüğe kaydeder.
 
 /clean
-- Clean Temp Files and Logs.
+- Geçici Dosyaları ve Günlükleri temizleyin.
 """
 # Add Sudo Users!
 
@@ -51,7 +50,7 @@ async def useradd(_, message: Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
             await message.reply_text(
-                "Reply to a user's message or give username/user_id."
+                "Bir kullanıcının mesajına cevap verin veya KullanıcıAdı/Kullanıcı_id verin."
             )
             return
         user = message.text.split(None, 1)[1]
@@ -60,16 +59,16 @@ async def useradd(_, message: Message):
         user = await app.get_users(user)
         if user.id in SUDOERS:
             return await message.reply_text(
-                f"{user.mention} is already a sudo user."
+                f"{user.mention} Zaten bir Yönetici kullanıcısıdır."
             )
         added = await add_sudo(user.id)
         if added:
             await message.reply_text(
-                f"Added **{user.mention}** to Sudo Users."
+                f"Eklendi **{user.mention}** Yönetici Kullanıcıları için."
             )
             os.system(f"kill -9 {os.getpid()} && python3 -m Yukki")
         else:
-            await message.reply_text("Failed")
+            await message.reply_text("Başarısız")
         return
     if message.reply_to_message.from_user.id in SUDOERS:
         return await message.reply_text(
@@ -128,7 +127,7 @@ async def userdel(_, message: Message):
 @app.on_message(filters.command("sudolist"))
 async def sudoers_list(_, message: Message):
     sudoers = await get_sudoers()
-    text = "⭐️<u> **Owners:**</u>\n"
+    text = "⭐️<u> **Sahipleri:**</u>\n"
     sex = 0
     for x in OWNER_ID:
         try:
@@ -146,13 +145,13 @@ async def sudoers_list(_, message: Message):
                 user = user.first_name if not user.mention else user.mention
                 if smex == 0:
                     smex += 1
-                    text += "\n⭐️<u> **Sudo Users:**</u>\n"
+                    text += "\n⭐️<u> **Yönetici Kullanıcıları:**</u>\n"
                 sex += 1
                 text += f"{sex}➤ {user}\n"
             except Exception:
                 continue
     if not text:
-        await message.reply_text("No Sudo Users")
+        await message.reply_text("Yönetici Kullanıcısı Yok")
     else:
         await message.reply_text(text)
 
@@ -161,12 +160,12 @@ async def sudoers_list(_, message: Message):
 
 
 @app.on_message(
-    filters.command(["set_video_limit", f"set_video_limit@{BOT_USERNAME}"])
+    filters.command(["limit", f"set_video_limit@{BOT_USERNAME}"])
     & filters.user(SUDOERS)
 )
 async def set_video_limit_kid(_, message: Message):
     if len(message.command) != 2:
-        usage = "**Usage:**\n/set_video_limit [Number of chats allowed]"
+        usage = "**Kullanım:**\n/limit [İzin verilen sohbet sayısı]"
         return await message.reply_text(usage)
     chat_id = message.chat.id
     state = message.text.split(None, 1)[1].strip()
@@ -174,11 +173,11 @@ async def set_video_limit_kid(_, message: Message):
         limit = int(state)
     except:
         return await message.reply_text(
-            "Please Use Numeric Numbers for Setting Limit."
+            "Sınırı Ayarlamak için Lütfen Sayısal Sayılar kullanın."
         )
     await set_video_limit(141414, limit)
     await message.reply_text(
-        f"Video Calls Maximum Limit Defined to {limit} Chats."
+        f"Görüntülü Aramaların Maksimum Sınırı {limit} Sohbetleriyle tanımlanır."
     )
 
 
@@ -395,7 +394,7 @@ async def unban_globally(_, message):
 # Broadcast Message
 
 
-@app.on_message(filters.command("broadcast_pin") & filters.user(SUDOERS))
+@app.on_message(filters.command("reklam_pin") & filters.user(SUDOERS))
 async def broadcast_message_pin_silent(_, message):
     if not message.reply_to_message:
         pass
@@ -421,12 +420,12 @@ async def broadcast_message_pin_silent(_, message):
             except Exception:
                 pass
         await message.reply_text(
-            f"**Broadcasted Message In {sent}  Chats with {pin} Pins.**"
+            f"**{sent} Sohbetlerinde {pin} Pinleri ile Mesaj Yayınlandı.**"
         )
         return
     if len(message.command) < 2:
         await message.reply_text(
-            "**Usage**:\n/broadcast [MESSAGE] or [Reply to a Message]"
+            "**Kullanım**:\n/reklam [Mesaj] veya [İletiyi Yanıtla]"
         )
         return
     text = message.text.split(None, 1)[1]
@@ -449,7 +448,7 @@ async def broadcast_message_pin_silent(_, message):
         except Exception:
             pass
     await message.reply_text(
-        f"**Broadcasted Message In {sent} Chats and {pin} Pins.**"
+        f"**{sent} Sohbetlerinde {pin} Pinleri ile Mesaj Yayınlandı.**"
     )
 
 
@@ -479,12 +478,12 @@ async def broadcast_message_pin_loud(_, message):
             except Exception:
                 pass
         await message.reply_text(
-            f"**Broadcasted Message In {sent}  Chats with {pin} Pins.**"
+            f"**{sent} Sohbetlerinde {pin} Pinleri ile Mesaj Yayınlandı.**"
         )
         return
     if len(message.command) < 2:
         await message.reply_text(
-            "**Usage**:\n/broadcast [MESSAGE] or [Reply to a Message]"
+            "**Kullanım**:\n/reklam [Mesaj] veya [İletiyi Yanıtla]"
         )
         return
     text = message.text.split(None, 1)[1]
@@ -507,11 +506,11 @@ async def broadcast_message_pin_loud(_, message):
         except Exception:
             pass
     await message.reply_text(
-        f"**Broadcasted Message In {sent} Chats and {pin} Pins.**"
+        f"**{sent} Sohbetlerinde {pin} Pinleri ile Mesaj Yayınlandı.**"
     )
 
 
-@app.on_message(filters.command("broadcast") & filters.user(SUDOERS))
+@app.on_message(filters.command("reklam") & filters.user(SUDOERS))
 async def broadcast(_, message):
     if not message.reply_to_message:
         pass
@@ -530,11 +529,11 @@ async def broadcast(_, message):
                 sent += 1
             except Exception:
                 pass
-        await message.reply_text(f"**Broadcasted Message In {sent} Chats.**")
+        await message.reply_text(f"**{sent} Sohbetlerinde Yayınlanan İleti.**")
         return
     if len(message.command) < 2:
         await message.reply_text(
-            "**Usage**:\n/broadcast [MESSAGE] or [Reply to a Message]"
+            "**Kullanım**:\n/reklam [Mesaj] veya [İletiyi Yanıtla]"
         )
         return
     text = message.text.split(None, 1)[1]
@@ -550,7 +549,7 @@ async def broadcast(_, message):
             sent += 1
         except Exception:
             pass
-    await message.reply_text(f"**Broadcasted Message In {sent} Chats.**")
+    await message.reply_text(f"**{sent} Sohbetlerinde Yayınlanan İleti.**")
 
 
 # Clean
