@@ -88,7 +88,7 @@ def inl_mark(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="⬅️  Geri Git", callback_data=f"good {videoid}|{user_id}"
+                text="⇠  Geri Git", callback_data=f"good {videoid}|{user_id}"
             ),
             InlineKeyboardButton(
                 text="🗑 Menüyü Kapat", callback_data=f"close2"
@@ -130,7 +130,7 @@ async def boom(_, CallbackQuery):
 🎥**𝗞𝗮𝗻𝗮𝗹 𝗔𝗱𝗶:** {channel}
 🔗**𝗩𝗶𝗱𝗲𝗼 𝗕𝗮𝗴̆𝗹𝗮𝗻𝘁𝗶𝘀𝗶:** [Link]({yturl})
 
-⚡️ __𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐒𝐚𝐭𝐢𝐫 𝐢𝐜̧𝐢 𝐢𝐧𝐝𝐢𝐫𝐦𝐞 {MUSIC_BOT_NAME} 𝐭𝐚𝐫𝐚𝐟𝐢𝐧𝐝𝐚𝐧 𝐝𝐞𝐬𝐭𝐞𝐤𝐥𝐞𝐧𝐦𝐞𝐤𝐭𝐞𝐝𝐢𝐫.__"""
+⚡️ 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐒𝐚𝐭𝐢𝐫 𝐢𝐜̧𝐢 𝐢𝐧𝐝𝐢𝐫𝐦𝐞 {MUSIC_BOT_NAME} 𝐭𝐚𝐫𝐚𝐟𝐢𝐧𝐝𝐚𝐧 𝐝𝐞𝐬𝐭𝐞𝐤𝐥𝐞𝐧𝐦𝐞𝐤𝐭𝐞𝐝𝐢𝐫."""
     filext = "%(title)s.%(ext)s"
     userdir = os.path.join(os.getcwd(), "downloads", str(user_id))
     if not os.path.isdir(userdir):
