@@ -28,7 +28,7 @@ def livestream_markup(quality, videoid, duration, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="🎥  Start Live",
+                text="🎥 Yayına Başla",
                 callback_data=f"LiveStream {quality}|{videoid}|{duration}|{user_id}",
             ),
             InlineKeyboardButton(
