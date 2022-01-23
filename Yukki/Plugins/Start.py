@@ -241,7 +241,7 @@ async def start_markup_check(_, CallbackQuery):
         _check = await get_start(c_id, "assistant")
         volume = _check["volume"]
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n│\n╰**𝗚𝗿𝘂𝗽:** {c_title}\n│\n╰**𝗚𝗿𝘂𝗽 𝗶𝗱:** {c_id}\n│\n╰**Volume Level:** {volume}%\n│\n╰Check {MUSIC_BOT_NAME}'s System Stats In the DashBoard Here! More Functions adding very soon! Keep on Checking Support Channel.",
+            text=f"{text}\n│\n╰**𝗚𝗿𝘂𝗽:** {c_title}\n│\n╰**𝗚𝗿𝘂𝗽 𝗶𝗱:** {c_id}\n│\n╰**𝗦𝗲𝘀 𝗦𝗲𝘃𝗶𝘆𝗲𝘀𝗶:** {volume}%\n│\n╰Check {MUSIC_BOT_NAME}'𝘂𝗻 𝗚𝗼̈𝘀𝘁𝗲𝗿𝗴𝗲 𝗧𝗮𝗯𝗹𝗼𝘀𝘂𝗻𝗱𝗮𝗸𝗶 𝗦𝗶𝘀𝘁𝗲𝗺 𝗜̇𝘀𝘁𝗮𝘁𝗶𝘀𝘁𝗶𝗸𝗹𝗲𝗿𝗶 𝗕𝘂𝗿𝗮𝗱𝗮! 𝗗𝗮𝗵𝗮 𝗳𝗮𝘇𝗹𝗮 𝗢̈𝘇𝗲𝗹𝗹𝗶𝗸 𝗰̧𝗼𝗸 𝘆𝗮𝗸𝗶𝗻𝗱𝗮 𝗲𝗸𝗹𝗲𝗻𝗲𝗰𝗲𝗸! 𝗗𝗲𝘀𝘁𝗲𝗸 𝗞𝗮𝗻𝗮𝗹𝗶𝗻𝗶 𝗞𝗼𝗻𝘁𝗿𝗼𝗹 𝗘𝘁𝗺𝗲𝘆𝗲 𝗗𝗲𝘃𝗮𝗺 𝗲𝗱𝗶𝗻.",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     if command == "Custommarkup":
