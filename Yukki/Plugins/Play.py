@@ -158,7 +158,7 @@ async def play(_, message: Message):
         buttons = url_markup2(videoid, duration_min, message.from_user.id)
         return await message.reply_photo(
             photo=thumb,
-            caption=f"📎𝗜̇𝘀𝗶𝗺: **{title}\n│\n╰⏳𝗦𝘂̈𝗿𝗲:** {duration_min} 𝗗𝗮𝗸𝗶𝗸𝗮\n│\n╰__[Video Hakkında Ek Bilgi Alın](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎𝗜̇𝘀𝗶𝗺: **{title}\n│\n╰⏳𝗦𝘂̈𝗿𝗲:** {duration_min} 𝗗𝗮𝗸𝗶𝗸𝗮\n│\n╰__[𝗩𝗶𝗱𝗲𝗼 𝗛𝗮𝗸𝗸𝗶𝗻𝗱𝗮 𝗘𝗸 𝗕𝗶𝗹𝗴𝗶 𝗔𝗹𝗶𝗻](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     else:
@@ -174,7 +174,7 @@ async def play(_, message: Message):
                 reply_markup=InlineKeyboardMarkup(buttons),
             )
             return
-        mystic = await message.reply_text("🔍")
+        mystic = await message.reply_text("🔍 **Senin İçin Arıyorum**")
         query = message.text.split(None, 1)[1]
         (
             title,
@@ -189,7 +189,7 @@ async def play(_, message: Message):
         )
         return await message.reply_photo(
             photo=thumb,
-            caption=f"📎𝗜̇𝘀𝗶𝗺: **{title}\n│\n╰⏳𝗦𝘂̈𝗿𝗲:** {duration_min} 𝗗𝗮𝗸𝗶𝗸𝗮\n│\n╰__[Video Hakkında Ek Bilgi Alın](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎𝗜̇𝘀𝗶𝗺: **{title}\n│\n╰⏳𝗦𝘂̈𝗿𝗲:** {duration_min} 𝗗𝗮𝗸𝗶𝗸𝗮\n│\n╰__[𝗩𝗶𝗱𝗲𝗼 𝗛𝗮𝗸𝗸𝗶𝗻𝗱𝗮 𝗘𝗸 𝗕𝗶𝗹𝗴𝗶 𝗔𝗹𝗶𝗻](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
 
@@ -232,7 +232,7 @@ async def Music_Stream(_, CallbackQuery):
         )
     await CallbackQuery.answer(f"𝗜̇𝘀̧𝗹𝗲𝗺𝗲:- {title[:20]}", show_alert=True)
     mystic = await CallbackQuery.message.reply_text(
-        f"⚡"
+        f"**{MUSIC_BOT_NAME} 𝗜̇𝗡𝗗𝗜̇𝗥𝗜̇𝗬𝗢𝗥**\n│\n╰**𝗜̇𝘀𝗶𝗺:** {title[:50]}\n│\n╰0% ▂▃▄▅▆▇▉ 100%"
     )
     downloaded_file = await loop.run_in_executor(
         None, download, videoid, mystic, title
@@ -265,7 +265,7 @@ async def search_query_more(_, CallbackQuery):
             "𝗞𝗲𝗻𝗱𝗶 𝗠𝘂̈𝘇𝗶𝗴̆𝗶𝗻𝗶 𝗔𝗿𝗮 𝗗𝗼𝘀𝘁𝘂𝗺. 𝗕𝘂 𝗱𝘂̈𝗴̆𝗺𝗲𝘆𝗶 𝗸𝘂𝗹𝗹𝗮𝗻𝗺𝗮𝗻𝗮 𝗶𝘇𝗶𝗻 𝘃𝗲𝗿𝗺𝗶𝘆𝗼𝗿𝘂𝗺.",
             show_alert=True,
         )
-    await CallbackQuery.answer("Searching More Results")
+    await CallbackQuery.answer("Daha Fazla Sonuç Aranıyor")
     results = YoutubeSearch(query, max_results=5).to_dict()
     med = InputMediaPhoto(
         media="Utils/Result.JPEG",
@@ -377,7 +377,7 @@ async def slider_query_results(_, CallbackQuery):
         )
         med = InputMediaPhoto(
             media=thumb,
-            caption=f"📎𝐈̇𝐬𝐢𝐦: **{title}\n│\n╰⏳𝐒𝐮̈𝐫𝐞:** {duration_min} 𝐃𝐚𝐤𝐢𝐤𝐚\n│\n╰__[Video Hakkında Ek Bilgi Alın](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎𝐈̇𝐬𝐢𝐦: **{title}\n│\n╰⏳𝐒𝐮̈𝐫𝐞:** {duration_min} 𝐃𝐚𝐤𝐢𝐤𝐚\n│\n╰__[𝗩𝗶𝗱𝗲𝗼 𝗛𝗮𝗸𝗸𝗶𝗻𝗱𝗮 𝗘𝗸 𝗕𝗶𝗹𝗴𝗶 𝗔𝗹𝗶𝗻](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
         )
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
@@ -387,7 +387,7 @@ async def slider_query_results(_, CallbackQuery):
             query_type = 9
         else:
             query_type = int(type - 1)
-        await CallbackQuery.answer("Getting Previous Result", show_alert=True)
+        await CallbackQuery.answer("Önceki Sonucu Alınıyor", show_alert=True)
         (
             title,
             duration_min,
@@ -400,7 +400,7 @@ async def slider_query_results(_, CallbackQuery):
         )
         med = InputMediaPhoto(
             media=thumb,
-            caption=f"📎𝐈̇𝐬𝐢𝐦: **{title}\n│\n╰⏳𝐒𝐮̈𝐫𝐞:** {duration_min} 𝐃𝐚𝐤𝐢𝐤𝐚\n│\n╰__[Video Hakkında Ek Bilgi Alın](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎𝐈̇𝐬𝐢𝐦: **{title}\n│\n╰⏳𝐒𝐮̈𝐫𝐞:** {duration_min} 𝐃𝐚𝐤𝐢𝐤𝐚\n│\n╰__[𝗩𝗶𝗱𝗲𝗼 𝗛𝗮𝗸𝗸𝗶𝗻𝗱𝗮 𝗘𝗸 𝗕𝗶𝗹𝗴𝗶 𝗔𝗹𝗶𝗻](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
         )
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
