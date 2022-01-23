@@ -50,7 +50,7 @@ async def forceclose(_, CallbackQuery):
 
 
 @app.on_callback_query(
-    filters.regex(pattern=r"^(durdurcb|atlacb|soncb|devamcb)$")
+    filters.regex(pattern=r"^(pausecb|skipcb|stopcb|resumecb)$")
 )
 @AdminRightsCheckCB
 @checkerCB
@@ -62,7 +62,7 @@ async def admin_risghts(_, CallbackQuery):
             "𝗦𝗲𝘀𝗹𝗶 𝘀𝗼𝗵𝗯𝗲𝘁𝘁𝗲 𝗵𝗶𝗰̧𝗯𝗶𝗿 𝘀̧𝗲𝘆 𝗰̧𝗮𝗹𝗺𝗶𝘆𝗼𝗿.", show_alert=True
         )
     chat_id = CallbackQuery.message.chat.id
-    if command == "durdurcb":
+    if command == "pausecb":
         if not await is_music_playing(chat_id):
             return await CallbackQuery.answer(
                 "𝗠𝘂̈𝘇𝗶𝗸 𝘇𝗮𝘁𝗲𝗻 𝗗𝘂𝗿𝗮𝗸𝗹𝗮𝘁𝗶𝗹𝗱𝗶", show_alert=True
@@ -75,7 +75,7 @@ async def admin_risghts(_, CallbackQuery):
         )
         await CallbackQuery.message.delete()
         await CallbackQuery.answer("𝗗𝘂𝗿𝗮𝗸𝗹𝗮𝘁𝗶𝗹𝗱𝗶", show_alert=True)
-    if command == "devamcb":
+    if command == "resumecb":
         if await is_music_playing(chat_id):
             return await CallbackQuery.answer(
                 "𝗠𝘂̈𝘇𝗶𝗸 𝘇𝗮𝘁𝗲𝗻 𝗗𝗲𝘃𝗮𝗺 𝗘𝗱𝗶𝘆𝗼𝗿.", show_alert=True
@@ -88,7 +88,7 @@ async def admin_risghts(_, CallbackQuery):
         )
         await CallbackQuery.message.delete()
         await CallbackQuery.answer("Devam", show_alert=True)
-    if command == "soncb":
+    if command == "stopcb":
         if CallbackQuery.message.chat.id not in db_mem:
             db_mem[CallbackQuery.message.chat.id] = {}
         wtfbro = db_mem[CallbackQuery.message.chat.id]
@@ -106,7 +106,7 @@ async def admin_risghts(_, CallbackQuery):
         )
         await CallbackQuery.message.delete()
         await CallbackQuery.answer("Kapatıldı", show_alert=True)
-    if command == "atlacb":
+    if command == "skipcb":
         if CallbackQuery.message.chat.id not in db_mem:
             db_mem[CallbackQuery.message.chat.id] = {}
         wtfbro = db_mem[CallbackQuery.message.chat.id]
@@ -339,7 +339,7 @@ async def play_playlist(_, CallbackQuery):
     elif smex == "Personal":
         if CallbackQuery.from_user.id != int(user_id):
             return await CallbackQuery.answer(
-                "𝗕𝘂 𝘀𝗲𝗻𝗶𝗻 𝗶𝗰̧𝗶𝗻 𝗱𝗲𝗴̆𝗶𝗹 𝗗𝘀𝗼𝘁𝘂𝗺! 𝗞𝗲𝗻𝗱𝗶 𝗰̧𝗮𝗹𝗺𝗮 𝗹𝗶𝘀𝘁𝗲𝗻𝗶𝘇𝗶 𝗼𝘆𝗻𝗮𝘁", show_alert=True
+                "𝗕𝘂 𝘀𝗲𝗻𝗶𝗻 𝗶𝗰̧𝗶𝗻 𝗱𝗲𝗴̆𝗶𝗹 𝗗𝗼𝘀𝘁𝘂𝗺! 𝗞𝗲𝗻𝗱𝗶 𝗰̧𝗮𝗹𝗺𝗮 𝗹𝗶𝘀𝘁𝗲𝗻𝗶𝘇𝗶 𝗼𝘆𝗻𝗮𝘁", show_alert=True
             )
         _playlist = await get_playlist_names(user_id, type)
         third_name = CallbackQuery.from_user.first_name
