@@ -40,42 +40,42 @@ def play_genre_playlist(user_id, type, videoid):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"Arabest",
-                callback_data=f"play_playlist {user_id}|{type}|Bollywood",
+                text=f"Arabesk",
+                callback_data=f"play_playlist {user_id}|{type}|Arabesk",
             ),
             InlineKeyboardButton(
                 text=f"Kürtçe",
-                callback_data=f"play_playlist {user_id}|{type}|Hollywood",
+                callback_data=f"play_playlist {user_id}|{type}|Kürtçe",
             ),
         ],
         [
             InlineKeyboardButton(
                 text=f"Remix",
-                callback_data=f"play_playlist {user_id}|{type}|Party",
+                callback_data=f"play_playlist {user_id}|{type}|Remix",
             ),
             InlineKeyboardButton(
                 text=f"Yabancı",
-                callback_data=f"play_playlist {user_id}|{type}|Lofi",
+                callback_data=f"play_playlist {user_id}|{type}|Yabancı",
             ),
         ],
         [
             InlineKeyboardButton(
                 text=f"Dini",
-                callback_data=f"play_playlist {user_id}|{type}|Sad",
+                callback_data=f"play_playlist {user_id}|{type}|Dini",
             ),
             InlineKeyboardButton(
                 text=f"Pop",
-                callback_data=f"play_playlist {user_id}|{type}|Weeb",
+                callback_data=f"play_playlist {user_id}|{type}|Pop",
             ),
         ],
         [
             InlineKeyboardButton(
                 text=f"Nostaji",
-                callback_data=f"play_playlist {user_id}|{type}|Punjabi",
+                callback_data=f"play_playlist {user_id}|{type}|Nostaji",
             ),
             InlineKeyboardButton(
                 text=f"Karışık",
-                callback_data=f"play_playlist {user_id}|{type}|Others",
+                callback_data=f"play_playlist {user_id}|{type}|Karışık",
             ),
         ],
         [
@@ -94,41 +94,41 @@ def add_genre_markup(user_id, type, videoid):
         [
             InlineKeyboardButton(
                 text=f"✚ Pop",
-                callback_data=f"add_playlist {videoid}|{type}|Weeb",
+                callback_data=f"add_playlist {videoid}|{type}|Pop",
             ),
             InlineKeyboardButton(
                 text=f"✚ Dini",
-                callback_data=f"add_playlist {videoid}|{type}|Sad",
+                callback_data=f"add_playlist {videoid}|{type}|Dini",
             ),
         ],
         [
             InlineKeyboardButton(
                 text=f"✚ Remix",
-                callback_data=f"add_playlist {videoid}|{type}|Party",
+                callback_data=f"add_playlist {videoid}|{type}|Remix",
             ),
             InlineKeyboardButton(
                 text=f"✚ Yabancı",
-                callback_data=f"add_playlist {videoid}|{type}|Lofi",
+                callback_data=f"add_playlist {videoid}|{type}|Yabancı",
             ),
         ],
         [
             InlineKeyboardButton(
-                text=f"✚ Arabest",
-                callback_data=f"add_playlist {videoid}|{type}|Bollywood",
+                text=f"✚ Arabesk",
+                callback_data=f"add_playlist {videoid}|{type}|Arabesk",
             ),
             InlineKeyboardButton(
                 text=f"✚ Kürtçe",
-                callback_data=f"add_playlist {videoid}|{type}|Hollywood",
+                callback_data=f"add_playlist {videoid}|{type}|Kürtçe",
             ),
         ],
         [
             InlineKeyboardButton(
                 text=f"✚ Nostaji",
-                callback_data=f"add_playlist {videoid}|{type}|Punjabi",
+                callback_data=f"add_playlist {videoid}|{type}|Nostaji",
             ),
             InlineKeyboardButton(
                 text=f"✚ Karışık",
-                callback_data=f"add_playlist {videoid}|{type}|Others",
+                callback_data=f"add_playlist {videoid}|{type}|Karışık",
             ),
         ],
         [
@@ -145,37 +145,37 @@ def check_genre_markup(type, videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"Pop", callback_data=f"check_playlist {type}|Weeb"
+                text=f"Pop", callback_data=f"check_playlist {type}|Pop"
             ),
             InlineKeyboardButton(
-                text=f"Dini", callback_data=f"check_playlist {type}|Sad"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text=f"Remix", callback_data=f"check_playlist {type}|Party"
-            ),
-            InlineKeyboardButton(
-                text=f"Yabancı", callback_data=f"check_playlist {type}|Lofi"
+                text=f"Dini", callback_data=f"check_playlist {type}|Dini"
             ),
         ],
         [
             InlineKeyboardButton(
-                text=f"Arabest",
-                callback_data=f"check_playlist {type}|Bollywood",
+                text=f"Remix", callback_data=f"check_playlist {type}|Remix"
+            ),
+            InlineKeyboardButton(
+                text=f"Yabancı", callback_data=f"check_playlist {type}|Yabancı"
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text=f"Arabesk",
+                callback_data=f"check_playlist {type}|Arabesk",
             ),
             InlineKeyboardButton(
                 text=f"Kürtçe",
-                callback_data=f"check_playlist {type}|Hollywood",
+                callback_data=f"check_playlist {type}|Kürtçe",
             ),
         ],
         [
             InlineKeyboardButton(
                 text=f"Nostaji",
-                callback_data=f"check_playlist {type}|Punjabi",
+                callback_data=f"check_playlist {type}|Nostaji",
             ),
             InlineKeyboardButton(
-                text=f"Karışık", callback_data=f"check_playlist {type}|Others"
+                text=f"Karışık", callback_data=f"check_playlist {type}|Karışık"
             ),
         ],
         [InlineKeyboardButton(text="🗑 Menüyü Kapat", callback_data="close")],
