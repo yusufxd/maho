@@ -65,7 +65,7 @@ def AdminRightsCheckCB(mystic):
                     )
                     if token not in _check:
                         return await CallbackQuery.answer(
-                            "Bu eylemi gerçekleştirmek için gerekli izniniz yok.\ nİzin: SESLİ SOHBETLERİ YÖNET",
+                            "Bu eylemi gerçekleştirmek için gerekli izniniz yok.\nİzin: SESLİ SOHBETLERİ YÖNET",
                             show_alert=True,
                         )
         return await mystic(_, CallbackQuery)
@@ -80,7 +80,7 @@ def ActualAdminCB(mystic):
         )
         if not a.can_manage_voice_chats:
             return await CallbackQuery.answer(
-                "Bu eylemi gerçekleştirmek için gerekli izniniz yok.\ nİzin: SESLİ SOHBETLERİ YÖNET",
+                "Bu eylemi gerçekleştirmek için gerekli izniniz yok.\nİzin: SESLİ SOHBETLERİ YÖNET",
                 show_alert=True,
             )
         return await mystic(_, CallbackQuery)
