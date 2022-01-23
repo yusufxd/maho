@@ -84,7 +84,7 @@ async def lyricssex(_, CallbackQuery):
 async def lrsearch(_, message: Message):
     if len(message.command) < 2:
         return await message.reply_text("**𝗞𝘂𝗹𝗹𝗮𝗻𝗶𝗺:**\n│\n╰/söz [ Müzik adı]")
-    m = await message.reply_text("Searching Lyrics")
+    m = await message.reply_text("𝗦̧𝗮𝗿𝗸𝗶 𝗦𝗼̈𝘇𝗹𝗲𝗿𝗶 𝗔𝗿𝗮𝗻𝗶𝘆𝗼𝗿")
     query = message.text.split(None, 1)[1]
     x = "OXaVabSRKQLqwpiYOn-E4Y7k3wj-TNdL5RfDPXlnXhCErbcqVvdCF-WnMR5TBctI"
     y = lyricsgenius.Genius(x)
