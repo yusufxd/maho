@@ -87,7 +87,7 @@ async def initiate_bot():
     try:
         await app.send_message(
             LOG_GROUP_ID,
-            "<b>Congrats!! Music Bot has started successfully!</b>",
+            "<b>Tebrikler!! Müzik Botu başarıyla başladı!</b>",
         )
     except Exception as e:
         print(
@@ -106,7 +106,7 @@ async def initiate_bot():
         try:
             await ASS_CLI_1.send_message(
                 LOG_GROUP_ID,
-                "<b>Congrats!! Assistant Client 1  has started successfully!</b>",
+                "<b>Tebrikler!! Yardımcı İstemci 1 başarıyla başlatıldı!</b>",
             )
         except Exception as e:
             print(
@@ -229,11 +229,12 @@ async def initiate_bot():
     console.print(f"\n[red]Stopping Bot")
 
 
-home_text_pm = f"""Hello ,
-My name is {BOT_NAME}.
-A Telegram Music+Video Streaming bot with some useful features.
+home_text_pm = f"""𝗠𝗲𝗿𝗵𝗮𝗯𝗮 ,
+𝗕𝗲𝗻𝗶𝗺 𝗔𝗱𝗶𝗺 {BOT_NAME}.
 
-All commands can be used with: / """
+𝗕𝗮𝘇𝗶 𝗸𝘂𝗹𝗹𝗮𝗻𝗶𝘀̧𝗹𝗶 𝗼̈𝘇𝗲𝗹𝗹𝗶𝗸𝗹𝗲𝗿𝗲 𝘀𝗮𝗵𝗶𝗽 𝗯𝗶𝗿 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺 𝗠𝘂̈𝘇𝗶𝗸 + 𝗩𝗶𝗱𝗲𝗼 𝗔𝗸𝗶𝘀̧𝗶 𝗯𝗼𝘁𝘂𝘆𝘂𝗺.
+
+𝗧𝘂̈𝗺 𝗸𝗼𝗺𝘂𝘁𝗹𝗮𝗿𝗶𝗺 𝗶𝗹𝗲 𝗸𝘂𝗹𝗹𝗮𝗻𝗶𝗹𝗮𝗯𝗶𝗹𝗶𝗿𝘀𝗶𝗻: / """
 
 
 @app.on_message(filters.command("help") & filters.private)
@@ -248,7 +249,7 @@ async def start_command(_, message):
         name = (message.text.split(None, 1)[1]).lower()
         if name[0] == "s":
             sudoers = await get_sudoers()
-            text = "⭐️<u> **Owners:**</u>\n"
+            text = "⭐️<u> **Sahiplerim:**</u>\n"
             sex = 0
             for x in OWNER_ID:
                 try:
@@ -272,13 +273,13 @@ async def start_command(_, message):
                         )
                         if smex == 0:
                             smex += 1
-                            text += "\n⭐️<u> **Sudo Users:**</u>\n"
+                            text += "\n⭐️<u> **Yönetici Kullanıcılar:**</u>\n"
                         sex += 1
                         text += f"{sex}➤ {user}\n"
                     except Exception:
                         continue
             if not text:
-                await message.reply_text("No Sudo Users")
+                await message.reply_text("Yardımcı Yönetici yok")
             else:
                 await message.reply_text(text)
             if await is_on_off(5):
@@ -287,7 +288,7 @@ async def start_command(_, message):
                 umention = f"[{sender_name}](tg://user?id={int(sender_id)})"
                 return await LOG_CLIENT.send_message(
                     LOG_GROUP_ID,
-                    f"{message.from_user.mention} has just started bot to check <code>SUDOLIST</code>\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
+                    f"{message.from_user.mention} botu yeni başlattı.\n\n**KULLANICI KİMLİĞİ:** {sender_id}\n**KULLANICI adı:** {sender_name}",
                 )
         if name == "help":
             text, keyboard = await help_parser(message.from_user.mention)
@@ -298,7 +299,7 @@ async def start_command(_, message):
                 reply_markup=keyboard,
             )
         if name[0] == "i":
-            m = await message.reply_text("🔎 Fetching Info!")
+            m = await message.reply_text("🔎 𝗕𝗶𝗹𝗴𝗶 𝗔𝗹𝗶𝗻𝗶𝘆𝗼𝗿!")
             query = (str(name)).replace("info_", "", 1)
             query = f"https://www.youtube.com/watch?v={query}"
             results = VideosSearch(query, limit=1)
@@ -312,26 +313,26 @@ async def start_command(_, message):
                 link = result["link"]
                 published = result["publishedTime"]
             searched_text = f"""
-🔍__**Video Track Information**__
+🔍__**𝗩𝗶𝗱𝗲𝗼 𝗣𝗮𝗿𝗰̧𝗮 𝗕𝗶𝗹𝗴𝗶𝗹𝗲𝗿𝗶**__
 
-❇️**Title:** {title}
+❇️ 𝐈̇𝐬𝐢𝐦: {title}
 
-⏳**Duration:** {duration} Mins
-👀**Views:** `{views}`
-⏰**Published Time:** {published}
-🎥**Channel Name:** {channel}
-📎**Channel Link:** [Visit From Here]({channellink})
-🔗**Video Link:** [Link]({link})
+⏳ 𝐒𝐮̈𝐫𝐞: {duration} Mins
+👀 𝐆𝐨̈𝐫𝐮̈𝐧𝐮̈𝐦𝐥𝐞𝐫: `{views}`
+⏰ 𝐘𝐚𝐲𝐢𝐧𝐥𝐚𝐦𝐚 𝐙𝐚𝐦𝐚𝐧𝐢:** {published}
+🎥 𝐊𝐚𝐧𝐚𝐥 𝐀𝐝𝐢: {channel}
+📎 𝐊𝐚𝐧𝐚𝐥 𝐋𝐢𝐧𝐤𝐢: [Visit From Here]({channellink})
+🔗 𝐕𝐢𝐝𝐞𝐨 𝐁𝐚𝐠̆𝐥𝐚𝐧𝐭𝐢𝐬𝐢: [Link]({link})
 
-⚡️ __Searched Powered By {BOT_NAME}__"""
+⚡️ __{BOT_NAME} 𝗧𝗮𝗿𝗮𝗳𝗶𝗻𝗱𝗮𝗻 𝗗𝗲𝘀𝘁𝗲𝗸𝗹𝗲𝗻𝗺𝗲𝗸𝘁𝗲𝗱𝗶𝗿__"""
             key = InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="🎥 Watch Youtube Video", url=f"{link}"
+                            text="🎥 Youtube Videosunu İzle", url=f"{link}"
                         ),
                         InlineKeyboardButton(
-                            text="🔄 Close", callback_data="close"
+                            text="🔄 Kapat", callback_data="close"
                         ),
                     ],
                 ]
@@ -350,7 +351,7 @@ async def start_command(_, message):
                 umention = f"[{sender_name}](tg://user?id={int(sender_id)})"
                 return await LOG_CLIENT.send_message(
                     LOG_GROUP_ID,
-                    f"{message.from_user.mention} has just started bot to check <code>VIDEO INFORMATION</code>\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
+                    f"{message.from_user.mention} VİDEO bilgilerini kontrol etmek için botu yeni başlattı <code></code></code>\n\n**KULLANICI kimliği:** {sender_ıdname}\n**KULLANICI adı:** {sender_name}",
                 )
             return
     out = private_panel()
@@ -364,7 +365,7 @@ async def start_command(_, message):
         umention = f"[{sender_name}](tg://user?id={int(sender_id)})"
         return await LOG_CLIENT.send_message(
             LOG_GROUP_ID,
-            f"{message.from_user.mention} has just started Bot.\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
+            f"{message.from_user.mention} botu yeni başlattı.\n\n**KULLANICI KİMLİĞİ:** {sender_id}\n**KULLANICI adı:** {sender_name}",
         )
     return
 
@@ -373,11 +374,11 @@ async def help_parser(name, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     return (
-        """Hello {first_name},
+        """𝗠𝗲𝗿𝗵𝗮𝗯𝗮 {first_name},
 
-Click on the buttons for more information.
+𝗗𝗮𝗵𝗮 𝗳𝗮𝘇𝗹𝗮 𝗯𝗶𝗹𝗴𝗶 𝗶𝗰̧𝗶𝗻 𝗱𝘂̈𝗴̆𝗺𝗲𝗹𝗲𝗿𝗲 𝘁𝗶𝗸𝗹𝗮𝘆𝗶𝗻.
 
-All commands can be used with: /
+𝗧𝘂̈𝗺 𝗸𝗼𝗺𝘂𝘁𝗹𝗮𝗿𝗶𝗺 𝗶𝗹𝗲 𝗸𝘂𝗹𝗹𝗮𝗻𝗮𝗯𝗶𝗹𝗶𝗿𝘀𝗶𝗻: /
 """.format(
             first_name=name
         ),
@@ -399,17 +400,17 @@ async def help_button(client, query):
     next_match = re.match(r"help_next\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
     create_match = re.match(r"help_create", query.data)
-    top_text = f"""Hello {query.from_user.first_name},
+    top_text = f"""𝗠𝗲𝗿𝗵𝗮𝗯𝗮 {query.from_user.first_name},
 
-Click on the buttons for more information.
+𝗗𝗮𝗵𝗮 𝗳𝗮𝘇𝗹𝗮 𝗯𝗶𝗹𝗴𝗶 𝗶𝗰̧𝗶𝗻 𝗱𝘂̈𝗴̆𝗺𝗲𝗹𝗲𝗿𝗲 𝘁𝗶𝗸𝗹𝗮𝘆𝗶𝗻.
 
-All commands can be used with: /
+𝗧𝘂̈𝗺 𝗸𝗼𝗺𝘂𝘁𝗹𝗮𝗿𝗶𝗺 𝗶𝗹𝗲 𝗸𝘂𝗹𝗹𝗮𝗻𝗮𝗯𝗶𝗹𝗶𝗿𝘀𝗶𝗻: /
  """
     if mod_match:
         module = mod_match.group(1)
         text = (
             "{} **{}**:\n".format(
-                "Here is the help for", HELPABLE[module].__MODULE__
+                "𝗜̇𝘀̧𝘁𝗲 𝗯𝘂𝗻𝘂𝗻 𝗶𝗰̧𝗶𝗻 𝘆𝗮𝗿𝗱𝗶𝗺", HELPABLE[module].__MODULE__
             )
             + HELPABLE[module].__HELP__
         )
@@ -417,10 +418,10 @@ All commands can be used with: /
             [
                 [
                     InlineKeyboardButton(
-                        text="↪️ Back", callback_data="help_back"
+                        text="↪️ Geri", callback_data="help_back"
                     ),
                     InlineKeyboardButton(
-                        text="🔄 Close", callback_data="close"
+                        text="🔄 Kapat", callback_data="close"
                     ),
                 ],
             ]
