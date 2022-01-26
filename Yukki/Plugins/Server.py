@@ -306,7 +306,7 @@ async def update_(client, message):
             return await message.reply_text(
                 "<b>HEROKU APP DETECTED!</b>\n\n<b>Make sure to add both</b> `HEROKU_API_KEY` **and** `HEROKU_APP_NAME` <b>vars correctly in order to be able to update remotely!</b>"
             )
-    response = await message.reply_text("Checking for available updates...")
+    response = await message.reply_text("𝗠𝗲𝘃𝗰𝘂𝘁 𝗴𝘂̈𝗻𝗰𝗲𝗹𝗹𝗲𝗺𝗲𝗹𝗲𝗿𝗶 𝗸𝗼𝗻𝘁𝗿𝗼𝗹 𝗲𝗱𝗶𝘆𝗼𝗿𝘂𝗺...")
     try:
         repo = Repo()
     except GitCommandError:
@@ -321,7 +321,7 @@ async def update_(client, message):
     for checks in repo.iter_commits(f"HEAD..origin/{UPSTREAM_BRANCH}"):
         verification = str(checks.count())
     if verification == "":
-        return await response.edit("Bot is up-to-date!")
+        return await response.edit("𝗕𝗼𝘁 𝗴𝘂̈𝗻𝗰𝗲𝗹!")
     updates = ""
     ordinal = lambda format: "%d%s" % (
         format,
@@ -373,7 +373,7 @@ async def update_(client, message):
 
 @app.on_message(filters.command("restart") & filters.user(SUDOERS))
 async def restart_(_, message):
-    response = await message.reply_text("Restarting....")
+    response = await message.reply_text("𝗬𝗲𝗻𝗶𝗱𝗲𝗻 𝗕𝗮𝘀̧𝗹𝗮𝘁𝗶𝗹𝗶𝘆𝗼𝗿....")
     if await is_heroku():
         if HEROKU_API_KEY == "" and HEROKU_APP_NAME == "":
             return await message.reply_text(
@@ -395,7 +395,7 @@ async def restart_(_, message):
                 try:
                     await app.send_message(
                         x,
-                        f"{MUSIC_BOT_NAME} has just restarted herself. Sorry for the issues.\n\nStart playing after 10-15 seconds again.",
+                        f"{MUSIC_BOT_NAME} Sadece kendini yeniden başlatıldı. Sorunlar için üzgünüm.\n\n10-15 saniye sonra tekrar oynamaya başlayın.",
                     )
                     await remove_active_chat(x)
                     await remove_active_video_chat(x)
@@ -403,12 +403,12 @@ async def restart_(_, message):
                     pass
             heroku3.from_key(HEROKU_API_KEY).apps()[HEROKU_APP_NAME].restart()
             await response.edit(
-                "**Heroku Restart**\n\nReboot has been initiated successfully! Wait for 1 - 2 minutes until the bot restarts."
+                "**Heroku Yeniden Başlatma**\n\n𝗬𝗲𝗻𝗶𝗱𝗲𝗻 𝗯𝗮𝘀̧𝗹𝗮𝘁𝗺𝗮 𝗯𝗮𝘀̧𝗮𝗿𝗶𝘆𝗹𝗮 𝗯𝗮𝘀̧𝗹𝗮𝘁𝗶𝗹𝗱𝗶! 𝗕𝗼𝘁 𝘆𝗲𝗻𝗶𝗱𝗲𝗻 𝗯𝗮𝘀̧𝗹𝗮𝘁𝗶𝗹𝗮𝗻𝗮 𝗸𝗮𝗱𝗮𝗿 𝟭-𝟮 𝗱𝗮𝗸𝗶𝗸𝗮 𝗯𝗲𝗸𝗹𝗲𝘆𝗶𝗻."
             )
             return
         except Exception as err:
             await response.edit(
-                "Something went wrong while initiating reboot! Please try again later or check logs for more info."
+                "Yeniden başlatmayı başlatırken bir şeyler ters gitti! Lütfen daha sonra tekrar deneyin veya daha fazla bilgi için günlükleri kontrol edin."
             )
             return
     else:
@@ -458,6 +458,6 @@ async def restart_(_, message):
         except:
             pass
         await response.edit(
-            "Reboot has been initiated successfully! Wait for 1 - 2 minutes until the bot restarts."
+            "𝗬𝗲𝗻𝗶𝗱𝗲𝗻 𝗯𝗮𝘀̧𝗹𝗮𝘁𝗺𝗮 𝗯𝗮𝘀̧𝗮𝗿𝗶𝘆𝗹𝗮 𝗯𝗮𝘀̧𝗹𝗮𝘁𝗶𝗹𝗱𝗶! 𝗕𝗼𝘁 𝘆𝗲𝗻𝗶𝗱𝗲𝗻 𝗯𝗮𝘀̧𝗹𝗮𝘁𝗶𝗹𝗮𝗻𝗮 𝗸𝗮𝗱𝗮𝗿 𝟭-𝟮 𝗱𝗮𝗸𝗶𝗸𝗮 𝗯𝗲𝗸𝗹𝗲𝘆𝗶𝗻."
         )
         os.system(f"kill -9 {os.getpid()} && bash start")
