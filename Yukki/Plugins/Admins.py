@@ -82,7 +82,7 @@ async def admins(_, message: Message):
         await music_off(chat_id)
         await pause_stream(chat_id)
         await message.reply_text(
-            f"🎧 **𝗦𝗲𝘀𝗹𝗶 𝘀𝗼𝗵𝗯𝗲𝘁 𝗗𝘂𝗿𝗮𝗸𝗹𝗮𝘁𝗶𝗹𝗱𝗶**\n│\n╰ {message.from_user.mention}!"
+            f"🎧 **𝗦𝗲𝘀𝗹𝗶 𝘀𝗼𝗵𝗯𝗲𝘁 𝗗𝘂𝗿𝗮𝗸𝗹𝗮𝘁𝗶𝗹𝗱𝗶**\n│\n╰𝗗𝘂𝗿𝗱𝘂𝗿𝗮𝗻: {message.from_user.mention}!"
         )
     if message.command[0][1] == "e":
         if await is_music_playing(message.chat.id):
@@ -90,7 +90,7 @@ async def admins(_, message: Message):
         await music_on(chat_id)
         await resume_stream(chat_id)
         await message.reply_text(
-            f"🎧 **𝗦𝗲𝘀𝗹𝗶 𝘀𝗼𝗵𝗯𝗲𝘁 𝗧𝗮𝗿𝗮𝗳𝗶𝗻𝗱𝗮𝗻 𝗗𝗲𝘃𝗮𝗺 𝗘𝗱𝗶𝗹𝗱𝗶**\n│\n╰ {message.from_user.mention}!"
+            f"🎧 **𝗦𝗲𝘀𝗹𝗶 𝘀𝗼𝗵𝗯𝗲𝘁 𝗧𝗮𝗿𝗮𝗳𝗶𝗻𝗱𝗮𝗻 𝗗𝗲𝘃𝗮𝗺 𝗘𝗱𝗶𝗹𝗱𝗶**\n│\n╰𝗗𝗲𝘃𝗮𝗺 𝗲𝗱𝗲𝗻: {message.from_user.mention}!"
         )
     if message.command[0][1] == "o" or message.command[0][1] == "n":
         if message.chat.id not in db_mem:
@@ -261,7 +261,7 @@ async def admins(_, message: Message):
                     thumbnail,
                 ) = get_yt_info_id(videoid)
                 await mystic.edit(
-                    f"**{MUSIC_BOT_NAME} 𝗜̇𝗡𝗗𝗜̇𝗥𝗜̇𝗖𝗜̇**\n│\n╰**𝗜̇𝗦𝗜̇𝗠:** {title[:50]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
+                    f"**{MUSIC_BOT_NAME} 𝗜̇𝗡𝗗𝗜̇𝗥𝗜̇𝗖𝗜̇**\n│\n╰**𝗜̇𝗦𝗜̇𝗠:** {title[:50]}\n\n0% ▂▃▄▅▆▇▉ 100%"
                 )
                 downloaded_file = await loop.run_in_executor(
                     None, download, videoid, mystic, title
