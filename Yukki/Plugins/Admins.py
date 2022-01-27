@@ -82,7 +82,7 @@ async def admins(_, message: Message):
         await music_off(chat_id)
         await pause_stream(chat_id)
         await message.reply_text(
-            f"🎧 **𝗦𝗲𝘀𝗹𝗶 𝘀𝗼𝗵𝗯𝗲𝘁 𝗗𝘂𝗿𝗮𝗸𝗹𝗮𝘁𝗶𝗹𝗱𝗶**\n│\n╰𝗗𝘂𝗿𝗱𝘂𝗿𝗮𝗻: {message.from_user.mention}!"
+            f"🎧 𝗦𝗲𝘀𝗹𝗶 𝘀𝗼𝗵𝗯𝗲𝘁 𝗗𝘂𝗿𝗮𝗸𝗹𝗮𝘁𝗶𝗹𝗱𝗶\n│\n╰𝗗𝘂𝗿𝗱𝘂𝗿𝗮𝗻: **{message.from_user.mention}**!"
         )
     if message.command[0][1] == "e":
         if await is_music_playing(message.chat.id):
@@ -90,7 +90,7 @@ async def admins(_, message: Message):
         await music_on(chat_id)
         await resume_stream(chat_id)
         await message.reply_text(
-            f"🎧 **𝗦𝗲𝘀𝗹𝗶 𝘀𝗼𝗵𝗯𝗲𝘁 𝗧𝗮𝗿𝗮𝗳𝗶𝗻𝗱𝗮𝗻 𝗗𝗲𝘃𝗮𝗺 𝗘𝗱𝗶𝗹𝗱𝗶**\n│\n╰𝗗𝗲𝘃𝗮𝗺 𝗲𝗱𝗲𝗻: {message.from_user.mention}!"
+            f"🎧 𝗦𝗲𝘀𝗹𝗶 𝘀𝗼𝗵𝗯𝗲𝘁 𝗧𝗮𝗿𝗮𝗳𝗶𝗻𝗱𝗮𝗻 𝗗𝗲𝘃𝗮𝗺 𝗘𝗱𝗶𝗹𝗱𝗶\n│\n╰𝗗𝗲𝘃𝗮𝗺 𝗲𝗱𝗲𝗻: **{message.from_user.mention}**!"
         )
     if message.command[0][1] == "o" or message.command[0][1] == "n":
         if message.chat.id not in db_mem:
@@ -105,7 +105,7 @@ async def admins(_, message: Message):
         await remove_active_video_chat(chat_id)
         await stop_stream(chat_id)
         await message.reply_text(
-            f"🎧 **𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁 𝗦𝗼𝗻𝘂**\n│\n╰𝗗𝘂𝗿𝗱𝘂𝗿𝗮𝗻: {message.from_user.mention}!"
+            f"🎧 𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁 𝗦𝗼𝗻𝘂\n│\n╰𝗗𝘂𝗿𝗱𝘂𝗿𝗮𝗻: **{message.from_user.mention}**!"
         )
     if message.command[0][1] == "t":
         if message.chat.id not in db_mem:
@@ -162,7 +162,7 @@ async def admins(_, message: Message):
                 final_output = await message.reply_photo(
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n│\n╰🎥<b>__𝗢𝘆𝗻𝗮𝘁𝗺𝗮𝘆𝗮 𝗕𝗮𝘀̧𝗹𝗮𝗱𝗶:__</b> {title} \n│\n╰⏳<b>__𝗦𝘂̈𝗿𝗲:__</b> {duration_min} \n│\n╰👨‍💻<b>__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__ </b> {mention}",
+                    caption=f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n│\n╰🎥<b>__𝗢𝘆𝗻𝗮𝘁𝗺𝗮𝘆𝗮 𝗕𝗮𝘀̧𝗹𝗮𝗱𝗶:__</b> **{title}** \n│\n╰⏳<b>__𝗦𝘂̈𝗿𝗲:__</b> **{duration_min}** \n│\n╰👨‍💻<b>__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__ </b> {mention}",
                 )
                 await start_timer(
                     videoid,
@@ -196,7 +196,7 @@ async def admins(_, message: Message):
                         photo="Utils/Telegram.JPEG",
                         reply_markup=InlineKeyboardMarkup(buttons),
                         caption=(
-                            f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗚𝗼̈𝗿𝘂̈𝗻𝘁𝘂̈𝗹𝘂̈ 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n│\n╰👨‍💻**__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__** {mention}"
+                            f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗚𝗼̈𝗿𝘂̈𝗻𝘁𝘂̈𝗹𝘂̈ 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n│\n╰👨‍💻__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__ **{mention}**"
                         ),
                     )
                     await mystic.delete()
@@ -236,7 +236,7 @@ async def admins(_, message: Message):
                         photo=thumb,
                         reply_markup=InlineKeyboardMarkup(buttons),
                         caption=(
-                            f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗚𝗼̈𝗿𝘂̈𝗻𝘁𝘂̈𝗹𝘂̈ 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n│\n╰🎥<b>__𝗩𝗶𝗱𝗲𝗼 𝗢𝘆𝗻𝗮𝘁𝗺𝗮𝘆𝗮 𝗕𝗮𝘀̧𝗹𝗮𝗱𝗶:__ </b> [{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n│\n╰👨‍💻**__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__** {mention}"
+                            f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗚𝗼̈𝗿𝘂̈𝗻𝘁𝘂̈𝗹𝘂̈ 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n│\n╰🎥<b>__𝗩𝗶𝗱𝗲𝗼 𝗢𝘆𝗻𝗮𝘁𝗺𝗮𝘆𝗮 𝗕𝗮𝘀̧𝗹𝗮𝗱𝗶:__ </b> **[{title[:25]}]**(https://www.youtube.com/watch?v={videoid}) \n│\n╰👨‍💻__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__ **{mention}**"
                         ),
                     )
                     await mystic.delete()
@@ -252,7 +252,7 @@ async def admins(_, message: Message):
                     )
             else:
                 mystic = await message.reply_text(
-                    f"**{MUSIC_BOT_NAME} 𝗖̧𝗮𝗹𝗺𝗮 𝗟𝗶𝘀𝘁𝗲𝘀𝗶 𝗜̇𝘀̧𝗹𝗲𝘃𝗶**\n│\n╰__𝗖̧𝗮𝗹𝗺𝗮 𝗟𝗶𝘀𝘁𝗲𝘀𝗶𝗻𝗱𝗲𝗻 𝗦𝗼𝗻𝗿𝗮𝗸𝗶 𝗠𝘂̈𝘇𝗶𝗸𝗹𝗲𝗿𝗶 𝗜̇𝗻𝗱𝗶𝗿𝗺𝗲....__"
+                    f"**{MUSIC_BOT_NAME}** 𝗖̧𝗮𝗹𝗺𝗮 𝗟𝗶𝘀𝘁𝗲𝘀𝗶 𝗜̇𝘀̧𝗹𝗲𝘃𝗶\n│\n╰__𝗖̧𝗮𝗹𝗺𝗮 𝗟𝗶𝘀𝘁𝗲𝘀𝗶𝗻𝗱𝗲𝗻 𝗦𝗼𝗻𝗿𝗮𝗸𝗶 𝗠𝘂̈𝘇𝗶𝗸𝗹𝗲𝗿𝗶 𝗜̇𝗻𝗱𝗶𝗿𝗺𝗲....__"
                 )
                 (
                     title,
@@ -261,7 +261,7 @@ async def admins(_, message: Message):
                     thumbnail,
                 ) = get_yt_info_id(videoid)
                 await mystic.edit(
-                    f"**{MUSIC_BOT_NAME} 𝗜̇𝗡𝗗𝗜̇𝗥𝗜̇𝗖𝗜̇**\n│\n╰**𝗜̇𝗦𝗜̇𝗠:** {title[:50]}\n\n0% ▂▃▄▅▆▇▉ 100%"
+                    f"**{MUSIC_BOT_NAME}** 𝗜̇𝗡𝗗𝗜̇𝗥𝗜̇𝗖𝗜̇\n│\n╰𝗜̇𝗦𝗜̇𝗠: **{title[:50]}**\n\n0% ▂▃▄▅▆▇▉ 100%"
                 )
                 downloaded_file = await loop.run_in_executor(
                     None, download, videoid, mystic, title
@@ -282,7 +282,7 @@ async def admins(_, message: Message):
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=(
-                        f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗚𝗼̈𝗿𝘂̈𝗻𝘁𝘂̈𝗹𝘂̈ 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n│\n╰🎥<b>__𝗢𝘆𝗻𝗮𝘁𝗺𝗮𝘆𝗮 𝗕𝗮𝘀̧𝗹𝗮𝗱𝗶:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n│\n╰⏳<b>__𝗦𝘂̈𝗿𝗲:__</b> {duration_min} 𝗗𝗮𝗸𝗶𝗸𝗮\n│\n╰👨‍💻**__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__** {mention}"
+                        f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗚𝗼̈𝗿𝘂̈𝗻𝘁𝘂̈𝗹𝘂̈ 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n│\n╰🎥<b>__𝗢𝘆𝗻𝗮𝘁𝗺𝗮𝘆𝗮 𝗕𝗮𝘀̧𝗹𝗮𝗱𝗶:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n│\n╰⏳<b>__𝗦𝘂̈𝗿𝗲:__</b> **{duration_min}** 𝗗𝗮𝗸𝗶𝗸𝗮\n│\n╰👨‍💻__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__ **{mention}**"
                     ),
                 )
                 os.remove(thumb)
