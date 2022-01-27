@@ -511,7 +511,7 @@ async def group_playlist(_, CallbackQuery):
     _count = await get_playlist_names(user_id, genre)
     if not _count:
         sex = await CallbackQuery.message.reply_text(
-            f"Welcome To {MUSIC_BOT_NAME}'s Çalma Listesi Özelliği.\n│\n╰Veritabanında Çalma Listeniz Oluşturuluyor... Lütfen bekleyin.\n│\n╰Tarz:- {genre}"
+            f"Merhaba {MUSIC_BOT_NAME}'s Çalma Listesi Özelliği.\n│\n╰Veritabanında Çalma Listeniz Oluşturuluyor... Lütfen bekleyin.\n│\n╰Tarz:- {genre}"
         )
         await asyncio.sleep(2)
         await sex.delete()
@@ -573,7 +573,7 @@ async def check_playlist(_, CallbackQuery):
             title = _note["title"]
             duration = _note["duration"]
             msg += f"{j}- {title[:60]}\n"
-            msg += f"    Duration- {duration} Min(s)\n\n"
+            msg += f"    **Süre- {duration} Saniye(s)**\n\n"
         m = await CallbackQuery.message.reply_text("Çalma Listesini Depo Gözüne Yapıştırma")
         link = await paste_queue(msg)
         preview = link + "/preview.png"
@@ -601,10 +601,10 @@ async def del_playlist(_, CallbackQuery):
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
     type, genre = callback_request.split("|")
-    if str(type) == "Personal":
+    if str(type) == "Kişisel":
         user_id = CallbackQuery.from_user.id
         user_name = CallbackQuery.from_user.first_name
-    elif str(type) == "Group":
+    elif str(type) == "Grup":
         a = await app.get_chat_member(
             CallbackQuery.message.chat.id, CallbackQuery.from_user.id
         )
