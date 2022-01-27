@@ -81,7 +81,7 @@ async def play(_, message: Message):
         duration_sec = audio.duration
         if (audio.duration) > DURATION_LIMIT:
             return await mystic.edit_text(
-                f"**𝗦𝘂̈𝗿𝗲 𝗦𝗶𝗻𝗶𝗿𝗶 𝗔𝘀̧𝗶𝗹𝗱𝗶**\n│\n╰**𝗜̇𝘇𝗶𝗻 𝗩𝗲𝗿𝗶𝗹𝗲𝗻 𝗦𝘂̈𝗿𝗲: **{DURATION_LIMIT_MIN} 𝗗𝗮𝗸𝗶𝗸𝗮(s)\n│\n╰**𝗔𝗹𝗶𝗻𝗮𝗻 𝗦𝘂̈𝗿𝗲:** {duration_min} 𝗗𝗮𝗸𝗶𝗸𝗮(s)"
+                f"𝗦𝘂̈𝗿𝗲 𝗦𝗶𝗻𝗶𝗿𝗶 𝗔𝘀̧𝗶𝗹𝗱𝗶\n│\n╰𝗜̇𝘇𝗶𝗻 𝗩𝗲𝗿𝗶𝗹𝗲𝗻 𝗦𝘂̈𝗿𝗲: **{DURATION_LIMIT_MIN}** 𝗗𝗮𝗸𝗶𝗸𝗮(s)\n│\n╰𝗔𝗹𝗶𝗻𝗮𝗻 𝗦𝘂̈𝗿𝗲: **{duration_min}** 𝗗𝗮𝗸𝗶𝗸𝗮(s)"
             )
         file_name = (
             audio.file_unique_id
@@ -111,7 +111,7 @@ async def play(_, message: Message):
         limit = await get_video_limit(141414)
         if not limit:
             return await message.reply_text(
-                "**𝗚𝗼̈𝗿𝘂̈𝗻𝘁𝘂̈𝗹𝘂̈ 𝗔𝗿𝗮𝗺𝗮𝗹𝗮𝗿 𝗶𝗰̧𝗶𝗻 𝗟𝗶𝗺𝗶𝘁 𝗧𝗮𝗻𝗶𝗺𝗹𝗮𝗻𝗺𝗮𝗱𝗶**\n│\n╰ /set_video_limit [𝐘𝐚𝐥𝐧𝐢𝐳𝐜𝐚 𝐁𝐨𝐭 𝐘𝐨̈𝐧𝐞𝐭𝐢𝐜𝐢 𝐊𝐮𝐥𝐥𝐚𝐧𝐢𝐜𝐢𝐥𝐚𝐫𝐢] 𝐭𝐚𝐫𝐚𝐟𝐢𝐧𝐝𝐚𝐧 𝐁𝐨𝐭𝐭𝐚 𝐢𝐳𝐢𝐧 𝐯𝐞𝐫𝐢𝐥𝐞𝐧 𝐌𝐚𝐤𝐬𝐢𝐦𝐮𝐦 𝐆𝐨̈𝐫𝐮̈𝐧𝐭𝐮̈𝐥𝐮̈ 𝐀𝐫𝐚𝐦𝐚 𝐒𝐚𝐲𝐢𝐬𝐢 𝐢𝐜̧𝐢𝐧 𝐛𝐢𝐫 𝐒𝐢𝐧𝐢𝐫 𝐁𝐞𝐥𝐢𝐫𝐥𝐞𝐲𝐢𝐧."
+                "𝗚𝗼̈𝗿𝘂̈𝗻𝘁𝘂̈𝗹𝘂̈ 𝗔𝗿𝗮𝗺𝗮𝗹𝗮𝗿 𝗶𝗰̧𝗶𝗻 𝗟𝗶𝗺𝗶𝘁 𝗧𝗮𝗻𝗶𝗺𝗹𝗮𝗻𝗺𝗮𝗱𝗶\n│\n╰ /set_video_limit [𝐘𝐚𝐥𝐧𝐢𝐳𝐜𝐚 𝐁𝐨𝐭 𝐘𝐨̈𝐧𝐞𝐭𝐢𝐜𝐢 𝐊𝐮𝐥𝐥𝐚𝐧𝐢𝐜𝐢𝐥𝐚𝐫𝐢] 𝐭𝐚𝐫𝐚𝐟𝐢𝐧𝐝𝐚𝐧 𝐁𝐨𝐭𝐭𝐚 𝐢𝐳𝐢𝐧 𝐯𝐞𝐫𝐢𝐥𝐞𝐧 𝐌𝐚𝐤𝐬𝐢𝐦𝐮𝐦 𝐆𝐨̈𝐫𝐮̈𝐧𝐭𝐮̈𝐥𝐮̈ 𝐀𝐫𝐚𝐦𝐚 𝐒𝐚𝐲𝐢𝐬𝐢 𝐢𝐜̧𝐢𝐧 𝐛𝐢𝐫 𝐒𝐢𝐧𝐢𝐫 𝐁𝐞𝐥𝐢𝐫𝐥𝐞𝐲𝐢𝐧."
             )
         count = len(await get_active_video_chats())
         if int(count) == int(limit):
@@ -158,7 +158,7 @@ async def play(_, message: Message):
         buttons = url_markup2(videoid, duration_min, message.from_user.id)
         return await message.reply_photo(
             photo=thumb,
-            caption=f"📎𝗜̇𝘀𝗶𝗺: **{title}\n│\n╰⏳𝗦𝘂̈𝗿𝗲:** {duration_min} 𝗗𝗮𝗸𝗶𝗸𝗮\n│\n╰__[𝗩𝗶𝗱𝗲𝗼 𝗛𝗮𝗸𝗸𝗶𝗻𝗱𝗮 𝗘𝗸 𝗕𝗶𝗹𝗴𝗶 𝗔𝗹𝗶𝗻](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎𝗜̇𝘀𝗶𝗺: **{title}**\n│\n╰⏳𝗦𝘂̈𝗿𝗲: **{duration_min}** 𝗗𝗮𝗸𝗶𝗸𝗮\n│\n╰__[𝗩𝗶𝗱𝗲𝗼 𝗛𝗮𝗸𝗸𝗶𝗻𝗱𝗮 𝗘𝗸 𝗕𝗶𝗹𝗴𝗶 𝗔𝗹𝗶𝗻](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     else:
@@ -189,7 +189,7 @@ async def play(_, message: Message):
         )
         return await message.reply_photo(
             photo=thumb,
-            caption=f"📎𝗜̇𝘀𝗶𝗺: **{title}\n│\n╰⏳𝗦𝘂̈𝗿𝗲:** {duration_min} 𝗗𝗮𝗸𝗶𝗸𝗮\n│\n╰__[𝗩𝗶𝗱𝗲𝗼 𝗛𝗮𝗸𝗸𝗶𝗻𝗱𝗮 𝗘𝗸 𝗕𝗶𝗹𝗴𝗶 𝗔𝗹𝗶𝗻](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎𝗜̇𝘀𝗶𝗺: **{title}**\n│\n╰⏳𝗦𝘂̈𝗿𝗲: **{duration_min}** 𝗗𝗮𝗸𝗶𝗸𝗮\n│\n╰__[𝗩𝗶𝗱𝗲𝗼 𝗛𝗮𝗸𝗸𝗶𝗻𝗱𝗮 𝗘𝗸 𝗕𝗶𝗹𝗴𝗶 𝗔𝗹𝗶𝗻](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
 
@@ -217,7 +217,7 @@ async def Music_Stream(_, CallbackQuery):
     if str(duration) == "None":
         buttons = livestream_markup("720", videoid, duration, user_id)
         return await CallbackQuery.edit_message_text(
-            "**𝗖𝗮𝗻𝗹𝗶 𝗬𝗮𝘆𝗶𝗻 𝗔𝗹𝗴𝗶𝗹𝗮𝗻𝗱𝗶**\n│\n╰𝗖𝗮𝗻𝗹𝗶 𝗮𝗸𝗶𝘀̧𝗶 𝗼𝘆𝗻𝗮𝘁𝗺𝗮𝗸 𝗶𝘀𝘁𝗲𝗿 𝗺𝗶𝘀𝗶𝗻𝗶𝘇? 𝗕𝘂, 𝗺𝗲𝘃𝗰𝘂𝘁 𝗺𝘂̈𝘇𝗶𝗸 𝗰̧𝗮𝗹𝗺𝗮𝘆𝗶 𝗱𝘂𝗿𝗱𝘂𝗿𝗮𝗰𝗮𝗸 (𝘃𝗮𝗿𝘀𝗮) 𝘃𝗲 𝗰𝗮𝗻𝗹𝗶 𝘃𝗶𝗱𝗲𝗼 𝗮𝗸𝗶𝘀̧𝗶 𝗯𝗮𝘀̧𝗹𝗮𝘁𝗮𝗰𝗮𝗸𝘁𝗶𝗿.",
+            "𝗖𝗮𝗻𝗹𝗶 𝗬𝗮𝘆𝗶𝗻 𝗔𝗹𝗴𝗶𝗹𝗮𝗻𝗱𝗶\n│\n╰𝗖𝗮𝗻𝗹𝗶 𝗮𝗸𝗶𝘀̧𝗶 𝗼𝘆𝗻𝗮𝘁𝗺𝗮𝗸 𝗶𝘀𝘁𝗲𝗿 𝗺𝗶𝘀𝗶𝗻𝗶𝘇? 𝗕𝘂, 𝗺𝗲𝘃𝗰𝘂𝘁 𝗺𝘂̈𝘇𝗶𝗸 𝗰̧𝗮𝗹𝗺𝗮𝘆𝗶 𝗱𝘂𝗿𝗱𝘂𝗿𝗮𝗰𝗮𝗸 (𝘃𝗮𝗿𝘀𝗮) 𝘃𝗲 𝗰𝗮𝗻𝗹𝗶 𝘃𝗶𝗱𝗲𝗼 𝗮𝗸𝗶𝘀̧𝗶 𝗯𝗮𝘀̧𝗹𝗮𝘁𝗮𝗰𝗮𝗸𝘁𝗶𝗿.",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     if CallbackQuery.from_user.id != int(user_id):
@@ -228,11 +228,11 @@ async def Music_Stream(_, CallbackQuery):
     title, duration_min, duration_sec, thumbnail = get_yt_info_id(videoid)
     if duration_sec > DURATION_LIMIT:
         return await CallbackQuery.message.reply_text(
-            f"**𝗦𝘂̈𝗿𝗲 𝗦𝗶𝗻𝗶𝗿𝗶 𝗔𝘀̧𝗶𝗹𝗱𝗶**\n│\n╰**𝗜̇𝘇𝗶𝗻 𝗩𝗲𝗿𝗶𝗹𝗲𝗻 𝗦𝘂̈𝗿𝗲: **{DURATION_LIMIT_MIN} 𝗱𝗮𝗸𝗶𝗸𝗮(s)\n│\n╰**𝗔𝗹𝗶𝗻𝗮𝗻 𝗦𝘂̈𝗿𝗲:** {duration_min} 𝗱𝗮𝗸𝗶𝗸𝗮(s)"
+            f"𝗦𝘂̈𝗿𝗲 𝗦𝗶𝗻𝗶𝗿𝗶 𝗔𝘀̧𝗶𝗹𝗱𝗶\n│\n╰𝗜̇𝘇𝗶𝗻 𝗩𝗲𝗿𝗶𝗹𝗲𝗻 𝗦𝘂̈𝗿𝗲: **{DURATION_LIMIT_MIN}** 𝗱𝗮𝗸𝗶𝗸𝗮(s)\n│\n╰𝗔𝗹𝗶𝗻𝗮𝗻 𝗦𝘂̈𝗿𝗲: **{duration_min}** 𝗱𝗮𝗸𝗶𝗸𝗮(s)"
         )
     await CallbackQuery.answer(f"𝗜̇𝘀̧𝗹𝗲𝗺𝗲:- {title[:20]}", show_alert=True)
     mystic = await CallbackQuery.message.reply_text(
-        f"**{MUSIC_BOT_NAME} 𝗜̇𝗡𝗗𝗜̇𝗥𝗜̇𝗬𝗢𝗥**\n│\n╰**𝗜̇𝘀𝗶𝗺:** {title[:50]}\n│\n╰0% ▂▃▄▅▆▇▉ 100%"
+        f"**{MUSIC_BOT_NAME}** 𝗜̇𝗡𝗗𝗜̇𝗥𝗜̇𝗬𝗢𝗥\n│\n╰𝗜̇𝘀𝗶𝗺: {title[:50]}\n│\n╰0% ▂▃▄▅▆▇▉ 100%"
     )
     downloaded_file = await loop.run_in_executor(
         None, download, videoid, mystic, title
@@ -377,7 +377,7 @@ async def slider_query_results(_, CallbackQuery):
         )
         med = InputMediaPhoto(
             media=thumb,
-            caption=f"📎𝐈̇𝐬𝐢𝐦: **{title}\n│\n╰⏳𝐒𝐮̈𝐫𝐞:** {duration_min} 𝐃𝐚𝐤𝐢𝐤𝐚\n│\n╰__[𝗩𝗶𝗱𝗲𝗼 𝗛𝗮𝗸𝗸𝗶𝗻𝗱𝗮 𝗘𝗸 𝗕𝗶𝗹𝗴𝗶 𝗔𝗹𝗶𝗻](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎𝐈̇𝐬𝐢𝐦: **{title}**\n│\n╰⏳𝐒𝐮̈𝐫𝐞: **{duration_min}** 𝐃𝐚𝐤𝐢𝐤𝐚\n│\n╰__[𝗩𝗶𝗱𝗲𝗼 𝗛𝗮𝗸𝗸𝗶𝗻𝗱𝗮 𝗘𝗸 𝗕𝗶𝗹𝗴𝗶 𝗔𝗹𝗶𝗻](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
         )
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
@@ -400,7 +400,7 @@ async def slider_query_results(_, CallbackQuery):
         )
         med = InputMediaPhoto(
             media=thumb,
-            caption=f"📎𝐈̇𝐬𝐢𝐦: **{title}\n│\n╰⏳𝐒𝐮̈𝐫𝐞:** {duration_min} 𝐃𝐚𝐤𝐢𝐤𝐚\n│\n╰__[𝗩𝗶𝗱𝗲𝗼 𝗛𝗮𝗸𝗸𝗶𝗻𝗱𝗮 𝗘𝗸 𝗕𝗶𝗹𝗴𝗶 𝗔𝗹𝗶𝗻](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎𝐈̇𝐬𝐢𝐦: **{title}**\n│\n╰⏳𝐒𝐮̈𝐫𝐞: **{duration_min}** 𝐃𝐚𝐤𝐢𝐤𝐚\n│\n╰__[𝗩𝗶𝗱𝗲𝗼 𝗛𝗮𝗸𝗸𝗶𝗻𝗱𝗮 𝗘𝗸 𝗕𝗶𝗹𝗴𝗶 𝗔𝗹𝗶𝗻](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
         )
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
