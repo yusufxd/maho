@@ -83,11 +83,11 @@ async def welcome(_, message: Message):
                 return await remove_active_chat(chat_id)
             if member.id in OWNER_ID:
                 return await message.reply_text(
-                    f"**{MUSIC_BOT_NAME}**'𝘂𝗻 𝗦𝗮𝗵𝗶𝗯𝗶[{member.mention}] 𝗚𝗿𝘂𝗯𝘂𝗻𝘂𝘇𝗮 𝗸𝗮𝘁𝗶𝗹𝗱𝗶 𝗦̧𝗮𝗻𝘀𝗹𝗶𝘀𝗶𝗻𝗶𝘇."
+                    f"**{MUSIC_BOT_NAME}** '𝘂𝗻 𝗦𝗮𝗵𝗶𝗯𝗶[{member.mention}] 𝗚𝗿𝘂𝗯𝘂𝗻𝘂𝘇𝗮 𝗸𝗮𝘁𝗶𝗹𝗱𝗶 𝗦̧𝗮𝗻𝘀𝗹𝗶𝘀𝗶𝗻𝗶𝘇."
                 )
             if member.id in SUDOERS:
                 return await message.reply_text(
-                    f"**{MUSIC_BOT_NAME}**'𝘂𝗻 𝗬𝗼̈𝗻𝗲𝘁𝗶𝗰𝗶𝘀𝗶[{member.mention}] 𝗚𝗿𝘂𝗯𝘂𝗻𝘂𝘇𝗮 𝗸𝗮𝘁𝗶𝗹𝗱𝗶 𝗦̧𝗮𝗻𝘀𝗹𝗶𝘀𝗶𝗻𝗶𝘇."
+                    f"**{MUSIC_BOT_NAME}** '𝘂𝗻 𝗬𝗼̈𝗻𝗲𝘁𝗶𝗰𝗶𝘀𝗶[{member.mention}] 𝗚𝗿𝘂𝗯𝘂𝗻𝘂𝘇𝗮 𝗸𝗮𝘁𝗶𝗹𝗱𝗶 𝗦̧𝗮𝗻𝘀𝗹𝗶𝘀𝗶𝗻𝗶𝘇."
                 )
             return
         except:
