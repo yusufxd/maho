@@ -12,11 +12,11 @@ def url_markup(videoid, duration, user_id, query, query_type):
                 callback_data=f"slider B|{query_type}|{query}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="🎵",
+                text="🎵 Oynat",
                 callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="🎥",
+                text="🎥 Video",
                 callback_data=f"Choose {videoid}|{duration}|{user_id}",
             ),
             InlineKeyboardButton(
@@ -26,11 +26,11 @@ def url_markup(videoid, duration, user_id, query, query_type):
         ],
         [
             InlineKeyboardButton(
-                text="🔎 Fazla Sonuç",
+                text="🔎 Extra",
                 callback_data=f"Search {query}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="❌ Çıkış yap",
+                text="❌ Menüden Çık",
                 callback_data=f"forceclose {query}|{user_id}",
             ),
         ],
@@ -46,13 +46,13 @@ def url_markup2(videoid, duration, user_id):
                 callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="🎥 Video izle",
+                text="🎥 Video",
                 callback_data=f"Choose {videoid}|{duration}|{user_id}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="❌ Çıkış",
+                text="❌ Menüden çık",
                 callback_data=f"forceclose {videoid}|{user_id}",
             )
         ],
@@ -173,7 +173,7 @@ def secondary_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="🔗 Daha Fazla", callback_data=f"other {videoid}|{user_id}"
+                text="🔗 Extra", callback_data=f"other {videoid}|{user_id}"
             ),
             InlineKeyboardButton(text="❌ Menüden çık", callback_data=f"close"),
         ],
