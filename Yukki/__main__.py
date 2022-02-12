@@ -332,7 +332,7 @@ async def start_command(_, message):
                             text="🎥 Youtube Videosunu İzle", url=f"{link}"
                         ),
                         InlineKeyboardButton(
-                            text="🔄 Kapat", callback_data="close"
+                            text="❌ Kapat", callback_data="close"
                         ),
                     ],
                 ]
@@ -421,7 +421,7 @@ async def help_button(client, query):
                         text="↪️ Geri", callback_data="help_back"
                     ),
                     InlineKeyboardButton(
-                        text="🔄 Kapat", callback_data="close"
+                        text="❌ Kapat", callback_data="close"
                     ),
                 ],
             ]
