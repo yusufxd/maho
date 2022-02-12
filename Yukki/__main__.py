@@ -201,11 +201,11 @@ async def initiate_bot():
         try:
             await LOG_CLIENT.send_message(
                 LOG_GROUP_ID,
-                "<b>Congrats!! Logger Client has started successfully!</b>",
+                "<b>Tebrikler!! Günlükler İstemcisi başarıyla başlatıldı!</b>",
             )
         except Exception as e:
             print(
-                "\nLogger Client has failed to access the log Channel. Make sure that you have added your Logger Account to your log channel and promoted as admin!"
+                "\nGünlük İstemci günlük kanalına erişemedi. Logger Hesabınızı günlük kanalınıza eklediğinizden ve yönetici olarak yükseltdiğinizden emin olun!"
             )
             console.print(f"\n[red]Stopping Bot")
             return
@@ -214,7 +214,7 @@ async def initiate_bot():
             await LOG_CLIENT.join_chat("YukkiSupport")
         except:
             pass
-    console.print(f"└[red] Yukki Music Bot Boot Completed.")
+    console.print(f"└[red] Efsane Müzik Bot Önyükleme tamamlandı.")
     if STRING1 != "None":
         await pytgcalls1.start()
     if STRING2 != "None":
