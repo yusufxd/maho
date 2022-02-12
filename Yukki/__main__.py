@@ -33,7 +33,7 @@ HELPABLE = {}
 
 async def initiate_bot():
     with console.status(
-        "[magenta] Finalizing Booting...",
+        "[magenta] Önyükleme Sonlandırılıyor...",
     ) as status:
         try:
             chats = await get_active_video_chats()
@@ -82,7 +82,7 @@ async def initiate_bot():
             status="[bold blue]Importation Completed!",
         )
     console.print(
-        "[bold green]Congrats!! Yukki Music Bot has started successfully!\n"
+        "[bold green]Congrats!! Yukki Music Bot başarıyla başladı!\n"
     )
     try:
         await app.send_message(
@@ -119,7 +119,7 @@ async def initiate_bot():
             await ASS_CLI_1.join_chat("YukkiSupport")
         except:
             pass
-        console.print(f"├[red] Assistant 1 Started as {ASSNAME1}!")
+        console.print(f"├[red] Asistan 1 Olarak Başladı {ASSNAME1}!")
         console.print(f"├[green] ID :- {ASSID1}!")
     if STRING2 != "None":
         try:
