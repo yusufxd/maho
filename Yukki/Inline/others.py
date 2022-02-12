@@ -17,11 +17,11 @@ def others_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="✚ Sizin listeniz",
+                text="📮 Sizin listeniz",
                 callback_data=f"your_playlist {videoid}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="✚ Grup Listesiniz",
+                text="📮 Grup Listesiniz",
                 callback_data=f"group_playlist {videoid}|{user_id}",
             ),
         ],
@@ -49,7 +49,7 @@ def download_markup(videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="🎧 Şarkı İndir",
+                text="🎵 Şarkı İndir",
                 callback_data=f"gets audio|{videoid}|{user_id}",
             ),
             InlineKeyboardButton(
@@ -59,7 +59,7 @@ def download_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="⇠ Geri Git", callback_data=f"goback {videoid}|{user_id}"
+                text="🔙 Geri Git", callback_data=f"goback {videoid}|{user_id}"
             ),
             InlineKeyboardButton(text="❌ Menüden çık", callback_data=f"close"),
         ],
