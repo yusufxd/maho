@@ -14,7 +14,7 @@ def check_markup(user_name, user_id, videoid):
                 callback_data=f"playlist_check {user_id}|Personal|{videoid}",
             ),
         ],
-        [InlineKeyboardButton(text="🗑 Menüyü Kapat", callback_data="close")],
+        [InlineKeyboardButton(text="❌ Menüyü Kapat", callback_data="close")],
     ]
     return buttons
 
@@ -31,7 +31,7 @@ def playlist_markup(user_name, user_id, videoid):
                 callback_data=f"show_genre {user_id}|Personal|{videoid}",
             ),
         ],
-        [InlineKeyboardButton(text="🗑 Menüyü Kapat", callback_data="close")],
+        [InlineKeyboardButton(text="❌ Menüyü Kapat", callback_data="close")],
     ]
     return buttons
 
@@ -83,7 +83,7 @@ def play_genre_playlist(user_id, type, videoid):
                 text="⇦ Geri Dön",
                 callback_data=f"main_playlist {videoid}|{type}|{user_id}",
             ),
-            InlineKeyboardButton(text="🗑 Menüyü Kapat", callback_data="close"),
+            InlineKeyboardButton(text="❌ Menüyü Kapat", callback_data="close"),
         ],
     ]
     return buttons
@@ -135,7 +135,7 @@ def add_genre_markup(user_id, type, videoid):
             InlineKeyboardButton(
                 text="⇦ Geri Dön", callback_data=f"goback {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="🗑 Menüyü Kapat", callback_data="close"),
+            InlineKeyboardButton(text="❌ Menüyü Kapat", callback_data="close"),
         ],
     ]
     return buttons
@@ -178,7 +178,7 @@ def check_genre_markup(type, videoid, user_id):
                 text=f"Karışık", callback_data=f"check_playlist {type}|Karışık"
             ),
         ],
-        [InlineKeyboardButton(text="🗑 Menüyü Kapat", callback_data="close")],
+        [InlineKeyboardButton(text="❌ Menüyü Kapat", callback_data="close")],
     ]
     return buttons
 
@@ -201,7 +201,7 @@ def third_playlist_markup(user_name, user_id, third_name, userid, videoid):
                 callback_data=f"show_genre {userid}|third|{videoid}",
             ),
         ],
-        [InlineKeyboardButton(text="🗑 Kapat", callback_data="close")],
+        [InlineKeyboardButton(text="❌ Kapat", callback_data="close")],
     ]
     return buttons
 
@@ -214,8 +214,8 @@ def paste_queue_markup(url):
             InlineKeyboardButton(text="➽", callback_data=f"skipcb"),
             InlineKeyboardButton(text="☐", callback_data=f"stopcb"),
         ],
-        [InlineKeyboardButton(text="Kuyruğa Alınmış Çalma Listesi", url=f"{url}")],
-        [InlineKeyboardButton(text="🗑 Menüyü Kapat", callback_data=f"close")],
+        [InlineKeyboardButton(text="Sıradaki Çalma Listesi", url=f"{url}")],
+        [InlineKeyboardButton(text="❌ Menüyü Kapat", callback_data=f"close")],
     ]
     return buttons
 
@@ -229,7 +229,7 @@ def fetch_playlist(user_name, type, genre, user_id, url):
             ),
         ],
         [InlineKeyboardButton(text="Çalma listesine Göz At", url=f"{url}")],
-        [InlineKeyboardButton(text="🗑 Menüyü Kapat", callback_data=f"close")],
+        [InlineKeyboardButton(text="❌ Menüyü Kapat", callback_data=f"close")],
     ]
     return buttons
 
