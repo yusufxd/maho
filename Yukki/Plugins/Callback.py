@@ -167,7 +167,7 @@ async def admin_risghts(_, CallbackQuery):
                 final_output = await CallbackQuery.message.reply_photo(
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n│\n╰🎥<b>__𝗢𝘆𝗮𝗻𝘁𝗺𝗮𝘆𝗮 𝗕𝗮𝘀̧𝗹𝗮𝗱𝗶:__</b> {title} \n│\n╰⏳<b>__𝗦𝘂̈𝗿𝗲:__</b> {duration_min} \n│\n╰☑️<b>__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__ </b> {mention}",
+                    caption=f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n\n 🎥<b>__𝗢𝘆𝗮𝗻𝘁𝗺𝗮𝘆𝗮 𝗕𝗮𝘀̧𝗹𝗮𝗱𝗶:__</b> {title} \n⏳<b>__𝗦𝘂̈𝗿𝗲:__</b> {duration_min} \n☑️<b>__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__ </b> {mention}",
                 )
                 await start_timer(
                     videoid,
@@ -204,7 +204,7 @@ async def admin_risghts(_, CallbackQuery):
                         photo="Utils/Telegram.JPEG",
                         reply_markup=InlineKeyboardMarkup(buttons),
                         caption=(
-                            f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗚𝗼̈𝗿𝘂̈𝗻𝘁𝘂̈𝗹𝘂̈ 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n│\n╰☑️**𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:** {mention}"
+                            f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗚𝗼̈𝗿𝘂̈𝗻𝘁𝘂̈𝗹𝘂̈ 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n\n☑️**𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:** {mention}"
                         ),
                     )
                     await mystic.delete()
@@ -244,7 +244,7 @@ async def admin_risghts(_, CallbackQuery):
                         photo=thumb,
                         reply_markup=InlineKeyboardMarkup(buttons),
                         caption=(
-                            f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗚𝗼̈𝗿𝘂̈𝗻𝘁𝘂̈𝗹𝘂̈ 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n│\n╰🎥<b>__𝗩𝗶𝗱𝗲𝗼 𝗢𝘆𝗻𝗮𝘁𝗺𝗮𝘆𝗮 𝗕𝗮𝘀̧𝗹𝗮𝗱𝗶:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n│\n╰☑️**__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__** {mention}"
+                            f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗚𝗼̈𝗿𝘂̈𝗻𝘁𝘂̈𝗹𝘂̈ 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n\n🎥<b>__𝗩𝗶𝗱𝗲𝗼 𝗢𝘆𝗻𝗮𝘁𝗺𝗮𝘆𝗮 𝗕𝗮𝘀̧𝗹𝗮𝗱𝗶:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n☑️**__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__** {mention}"
                         ),
                     )
                     os.remove(thumb)
