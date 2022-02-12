@@ -17,7 +17,7 @@ psutil
 requests
 rich
 dnspython
-git+https://github.com/Mehmetbaba55/Yapmayanariz 
+git+https://github.com/Sorrybabe/downloader
 tgcrypto
 gitpython
 heroku3
