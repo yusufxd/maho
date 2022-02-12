@@ -411,7 +411,7 @@ async def play_playlist(_, CallbackQuery):
                     thumbnail,
                 ) = get_yt_info_id(videoid)
                 mystic = await mystic.edit(
-                    f"**{MUSIC_BOT_NAME} 𝗜̇𝗡𝗗𝗜̇𝗥𝗜̇𝗖𝗜̇**\n│\n╰**𝗜̇𝘀𝗶𝗺:** {title[:50]}\n│\n╰0% ▂▃▄▅▆▇▉ 100%"
+                    f"**{MUSIC_BOT_NAME} 𝗜̇𝗡𝗗𝗜̇𝗥𝗜̇𝗖𝗜̇**\n**𝗜̇𝘀𝗶𝗺:** {title[:50]}\n0% ▂▃▄▅▆▇▉ 100%"
                 )
                 downloaded_file = await loop.run_in_executor(
                     None, download, videoid, mystic, title
@@ -446,7 +446,7 @@ async def play_playlist(_, CallbackQuery):
                 got_queue.append(to_append)
                 await music_on(chat_id)
                 await add_active_chat(chat_id)
-                cap = f"🎥<b>__𝗢𝘆𝗻𝗮𝘁𝗶𝗹𝗮𝗻:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n│\n╰💡<b>__𝗕𝗶𝗹𝗴𝗶:__</b> [Ek Bilgi Al](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n│\n╰☑️**__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__** {CallbackQuery.from_user.mention}"
+                cap = f"🎥<b>__𝗢𝘆𝗻𝗮𝘁𝗶𝗹𝗮𝗻:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid})\n🌀<b>__𝗕𝗶𝗹𝗴𝗶:__</b> [Ek Bilgi Al](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n☑️**__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__** {CallbackQuery.from_user.mention}"
                 final_output = await CallbackQuery.message.reply_photo(
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
