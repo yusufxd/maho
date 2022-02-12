@@ -70,7 +70,7 @@ async def admin_risghts(_, CallbackQuery):
         await music_off(chat_id)
         await pause_stream(chat_id)
         await CallbackQuery.message.reply_text(
-            f"🎧 𝗦𝗲𝘀𝗹𝗶 𝘀𝗼𝗵𝗯𝗲𝘁 𝗗𝘂𝗿𝗮𝗸𝗹𝗮𝘁𝗶𝗹𝗱𝗶.. 𝗦𝗔𝗕𝗜𝗥 𝗬𝘂̈𝗸𝗹𝗲𝗻𝗶𝘆𝗼𝗿. \n│\n╰{CallbackQuery.from_user.mention}!",
+            f"🎧 𝗦𝗲𝘀𝗹𝗶 𝘀𝗼𝗵𝗯𝗲𝘁 𝗗𝘂𝗿𝗮𝗸𝗹𝗮𝘁𝗶𝗹𝗱𝗶.. 𝗦𝗔𝗕𝗜𝗥 𝗬𝘂̈𝗸𝗹𝗲𝗻𝗶𝘆𝗼𝗿. \n\n {CallbackQuery.from_user.mention}!",
             reply_markup=audio_markup2,
         )
         await CallbackQuery.message.delete()
@@ -83,7 +83,7 @@ async def admin_risghts(_, CallbackQuery):
         await music_on(chat_id)
         await resume_stream(chat_id)
         await CallbackQuery.message.reply_text(
-            f"🎧 𝗦𝗲𝘀𝗹𝗶 𝘀𝗼𝗵𝗯𝗲𝘁 𝗗𝗲𝘃𝗮𝗺 𝐞𝐝𝐢𝐲𝐨𝐫 \n│\n╰{CallbackQuery.from_user.mention}!",
+            f"🎧 𝗦𝗲𝘀𝗹𝗶 𝘀𝗼𝗵𝗯𝗲𝘁 𝗗𝗲𝘃𝗮𝗺 𝐞𝐝𝐢𝐲𝐨𝐫 \n\n {CallbackQuery.from_user.mention}!",
             reply_markup=audio_markup2,
         )
         await CallbackQuery.message.delete()
@@ -101,7 +101,7 @@ async def admin_risghts(_, CallbackQuery):
         await remove_active_video_chat(chat_id)
         await stop_stream(chat_id)
         await CallbackQuery.message.reply_text(
-            f"🎧 𝐒𝐞𝐬𝐥𝐢 𝐬𝐨𝐡𝐛𝐞𝐭 𝐁𝐢𝐭𝐭𝐢 :( \n│\n╰ {CallbackQuery.from_user.mention}!",
+            f"🎧 𝐒𝐞𝐬𝐥𝐢 𝐬𝐨𝐡𝐛𝐞𝐭 𝐁𝐢𝐭𝐭𝐢 :( \n\n {CallbackQuery.from_user.mention}!",
             reply_markup=audio_markup2,
         )
         await CallbackQuery.message.delete()
@@ -116,7 +116,7 @@ async def admin_risghts(_, CallbackQuery):
             await remove_active_chat(chat_id)
             await remove_active_video_chat(chat_id)
             await CallbackQuery.message.reply_text(
-                f"𝗔𝗿𝘁𝗶𝗸 𝗦𝗶𝗿𝗮𝗱𝗮 𝗠𝘂̈𝘇𝗶𝗸 __𝗬𝗼𝗸__ \n│\n╰𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁'𝘁𝗲𝗻 𝗮𝘆𝗿𝗶𝗹𝗶𝘆𝗼𝗿𝘂𝗺.\n│\n╰𝐁𝐢𝐫𝐝𝐚𝐡𝐚 𝐃𝐨𝐤𝐚𝐧𝐦𝐚 𝐁𝐚𝐧𝐚 :- {CallbackQuery.from_user.mention}"
+                f"𝗔𝗿𝘁𝗶𝗸 𝗦𝗶𝗿𝗮𝗱𝗮 𝗠𝘂̈𝘇𝗶𝗸 __𝗬𝗼𝗸__ \n\n𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁'𝘁𝗲𝗻 𝗮𝘆𝗿𝗶𝗹𝗶𝘆𝗼𝗿𝘂𝗺.\n\n𝐁𝐢𝐫𝐝𝐚𝐡𝐚 𝐃𝐨𝐤𝐚𝐧𝐦𝐚 𝐁𝐚𝐧𝐚 :- {CallbackQuery.from_user.mention}"
             )
             await stop_stream(chat_id)
             await CallbackQuery.message.delete()
@@ -302,7 +302,7 @@ async def admin_risghts(_, CallbackQuery):
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=(
-                        f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n│\n╰🎥<b>__𝗢𝘆𝗻𝗮𝘁𝗺𝗮𝘆𝗮 𝗕𝗮𝘀̧𝗹𝗮𝗱𝗶:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n│\n╰⏳<b>__𝗦𝘂̈𝗿𝗲:__</b> {duration_min} 𝗗𝗮𝗸𝗶𝗸𝗮\n│\n╰☑️**__𝗧𝗮𝗹𝗲𝗽 𝗘𝗱𝗲𝗻:__** {mention}"
+                        f"<b>__𝗔𝘁𝗹𝗮𝗻𝗮𝗻 𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁__</b>\n\n🎥<b>__𝗢𝘆𝗻𝗮𝘁𝗺𝗮𝘆𝗮 𝗕𝗮𝘀̧𝗹𝗮𝗱𝗶:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n⏳<b>__𝗦𝘂̈𝗿𝗲:__</b> {duration_min} 𝗗𝗮𝗸𝗶𝗸𝗮 \n☑️**__𝗧𝗮𝗹𝗲𝗽 𝗘𝗱𝗲𝗻:__** {mention}"
                     ),
                 )
                 os.remove(thumb)
@@ -446,7 +446,7 @@ async def play_playlist(_, CallbackQuery):
                 got_queue.append(to_append)
                 await music_on(chat_id)
                 await add_active_chat(chat_id)
-                cap = f"🎥<b>__𝗢𝘆𝗻𝗮𝘁𝗶𝗹𝗮𝗻:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid})\n🌀<b>__𝗕𝗶𝗹𝗴𝗶:__</b> [Ek Bilgi Al](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n☑️**__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__** {CallbackQuery.from_user.mention}"
+                cap = f"🎥<b>__𝗢𝘆𝗻𝗮𝘁𝗶𝗹𝗮𝗻:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid})\n\n🌀<b>__𝗕𝗶𝗹𝗴𝗶:__</b> [Ek Bilgi Al](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n☑️**__𝗧𝗮𝗹𝗲𝗽 𝗲𝗱𝗲𝗻:__** {CallbackQuery.from_user.mention}"
                 final_output = await CallbackQuery.message.reply_photo(
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
