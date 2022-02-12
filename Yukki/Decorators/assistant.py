@@ -19,7 +19,7 @@ async def unban_assistant_(_, CallbackQuery):
     a = await app.get_chat_member(CallbackQuery.message.chat.id, BOT_ID)
     if not a.can_restrict_members:
         return await CallbackQuery.answer(
-            "I am not having ban/unban user permission. Ask any admin to unban the assistant.",
+            "Yasaklama/unban kullanıcı iznim yok. Herhangi bir yöneticiden asistanın grubunu çıkarmasını isteyin.",
             show_alert=True,
         )
     else:
@@ -29,11 +29,11 @@ async def unban_assistant_(_, CallbackQuery):
             )
         except:
             return await CallbackQuery.answer(
-                "Failed to unban",
+                "Unban başarısız oldu",
                 show_alert=True,
             )
         return await CallbackQuery.edit_message_text(
-            "Assistant Unbanned. Try Playing Now."
+            "Asistan Unbanned. Şimdi müzik çalmasını Deneyin."
         )
 
 
@@ -63,7 +63,7 @@ def AssistantAdd(mystic):
                 [
                     [
                         InlineKeyboardButton(
-                            text="🗑 Unban Assistant",
+                            text="✔️ Unban Assistant",
                             callback_data=f"unban_assistant a|{ASS_ID}",
                         )
                     ],
@@ -87,7 +87,7 @@ def AssistantAdd(mystic):
                     pass
                 except Exception as e:
                     await message.reply_text(
-                        f"__Assistant Failed To Join__\n\n**Reason**: {e}"
+                        f"__Yardımcı katılamadı__\n\n**Sebep**: {e}"
                     )
                     return
             else:
@@ -101,13 +101,13 @@ def AssistantAdd(mystic):
                         )
                     await ASS_ACC.join_chat(invitelink)
                     await message.reply(
-                        f"{ASS_NAME} Joined Successfully",
+                        f"{ASS_NAME} Başarıyla Katıldı",
                     )
                 except UserAlreadyParticipant:
                     pass
                 except Exception as e:
                     await message.reply_text(
-                        f"__Assistant Failed To Join__\n\n**Reason**: {e}"
+                        f"__Yardımcı katılamadı__\n\n**Sebep**: {e}"
                     )
                     return
         return await mystic(_, message)
