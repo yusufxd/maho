@@ -11,33 +11,33 @@ def others_markup(videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="🔎 Şarkı Sözlerini Ara",
+                text="🔎 Şarkının Sözleri",
                 callback_data=f"lyrics {videoid}|{user_id}",
             )
         ],
         [
             InlineKeyboardButton(
-                text="✚ Çalma Listeniz",
+                text="✚ Sizin listeniz",
                 callback_data=f"your_playlist {videoid}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="✚ Grup Çalma Listesi",
+                text="✚ Grup Listesiniz",
                 callback_data=f"group_playlist {videoid}|{user_id}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="📥 Ses/Video İndir",
+                text="📥 Ses~Video İndir",
                 callback_data=f"audio_video_download {videoid}|{user_id}",
             )
         ],
         [
             InlineKeyboardButton(
-                text="⇠ Geri Git",
+                text="🔙 Geri Git",
                 callback_data=f"pr_go_back_timer {videoid}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="🗑 Menüyü Kapat",
+                text="❌ Çıkış",
                 callback_data=f"close",
             ),
         ],
@@ -49,11 +49,11 @@ def download_markup(videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="📥 Şarkı İndir",
+                text="🎧 Şarkı İndir",
                 callback_data=f"gets audio|{videoid}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="📥 Video İndir",
+                text="📽️ Video İndir",
                 callback_data=f"gets video|{videoid}|{user_id}",
             ),
         ],
@@ -61,7 +61,7 @@ def download_markup(videoid, user_id):
             InlineKeyboardButton(
                 text="⇠ Geri Git", callback_data=f"goback {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="🗑 Menüyü Kapat", callback_data=f"close"),
+            InlineKeyboardButton(text="❌ Menüden çık", callback_data=f"close"),
         ],
     ]
     return buttons
