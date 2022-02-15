@@ -167,7 +167,7 @@ async def admin_risghts(_, CallbackQuery):
                 final_output = await CallbackQuery.message.reply_photo(
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"<b>__Atlatılan Sesli Sohbet__</b>\n🎥<b>__Yürütterek Başladı:__</b> {title} \n⏳<b>__Süre:__</b> {duration_min} \n👨‍✈️<b>__Talep eden kişi:__ </b> {mention}",
+                    caption=f"<b>__Atlatılan Sesli Sohbet__</b>\n\n🎥<b>__Yürütterek Başladı:__</b> {title} \n⏳<b>__Süre:__</b> {duration_min} \n👨‍✈️<b>__Talep eden kişi:__ </b> {mention}",
                 )
                 await start_timer(
                     videoid,
@@ -477,7 +477,7 @@ async def play_playlist(_, CallbackQuery):
                 await m.delete()
         else:
             await CallbackQuery.message.reply_text(
-                "Only 1 Music in Playlist.. No more music to add in queue."
+                "Çalma Listesinde Sadece 1 Müzik.. Kuyruğa eklenecek müzik yok."
             )
         if for_t == 1:
             await start_timer(
