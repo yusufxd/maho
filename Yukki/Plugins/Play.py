@@ -128,7 +128,7 @@ async def play(_, message: Message):
             read = db_mem[message.chat.id]["live_check"]
             if read:
                 return await mystic.edit(
-                    "𝗖𝗮𝗻𝗹𝗶 𝗬𝗮𝘆𝗶𝗻 𝗢𝘆𝗻𝗮𝘁𝗶𝗹𝗶𝘆𝗼𝗿...𝗠𝘂̈𝘇𝗶𝗸 𝗰̧𝗮𝗹𝗺𝗮𝗸 𝗶𝗰̧𝗶𝗻 𝗱𝘂𝗿𝗱𝘂𝗿𝘂𝗻"
+                    "Canlı yayın Oynatılıyor...Kapatmak için durdurun"
                 )
             else:
                 pass
@@ -142,7 +142,7 @@ async def play(_, message: Message):
             mystic,
         )
     elif url:
-        mystic = await message.reply_text("🔄 𝗨𝗥𝗟 𝗶𝘀̧𝗹𝗲𝗻𝗶𝘆𝗼𝗿... 𝗟𝘂̈𝘁𝗳𝗲𝗻 𝗕𝗲𝗸𝗹𝗲𝘆𝗶𝗻𝗶𝘇!")
+        mystic = await message.reply_text("🔄 Url işleniyor..Lütfen bekleyiniz!")
         if not message.reply_to_message:
             query = message.text.split(None, 1)[1]
         else:
@@ -232,7 +232,7 @@ async def Music_Stream(_, CallbackQuery):
         )
     await CallbackQuery.answer(f"İşleme alındı:- {title[:20]}", show_alert=True)
     mystic = await CallbackQuery.message.reply_text(
-        f"**{MUSIC_BOT_NAME}** İndiriyorum\n│\n📮 İsim: {title[:50]}\n│\n0% 100%"
+        f"**{MUSIC_BOT_NAME}** İndiriyorum\n│\n📮 İsim: {title[:50]}\n│\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
     )
     downloaded_file = await loop.run_in_executor(
         None, download, videoid, mystic, title
@@ -364,7 +364,7 @@ async def slider_query_results(_, CallbackQuery):
             query_type = 0
         else:
             query_type = int(type + 1)
-        await CallbackQuery.answer("𝗦𝗼𝗻𝗿𝗮𝗸𝗶 𝗦𝗼𝗻𝘂𝗰̧ 𝗔𝗹𝗶𝗻𝗶𝘆𝗼𝗿", show_alert=True)
+        await CallbackQuery.answer("Sonraki sonuç alınıyor.", show_alert=True)
         (
             title,
             duration_min,
