@@ -34,7 +34,7 @@ loop = asyncio.get_event_loop()
 
 
 @app.on_message(
-    filters.command(["oynat", f"play@{BOT_USERNAME}"]) & filters.group
+    filters.command(["oynat", f"oynat@{BOT_USERNAME}"]) & filters.group
 )
 @checker
 @logging
@@ -158,7 +158,7 @@ async def play(_, message: Message):
         buttons = url_markup2(videoid, duration_min, message.from_user.id)
         return await message.reply_photo(
             photo=thumb,
-            caption=f"📮 İsim: **{title}**\n\n⏳ Süee: **{duration_min}** Dakika\n\n__[Video Hakkında Bilgi Alın](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"🎵 İsim: **{title}**\n\n⏳ Süee: **{duration_min}** Dakika\n\n__[Video Hakkında Bilgi Alın](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     else:
@@ -189,7 +189,7 @@ async def play(_, message: Message):
         )
         return await message.reply_photo(
             photo=thumb,
-            caption=f"📮 İsim: **{title}**\n\n⏳ Süre: **{duration_min}** Dakika\n\n__[Video Hakkında Ek Bilgi Alın](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"🎵 İsim: **{title}**\n\n⏳ Süre: **{duration_min}** Dakika\n\n__[Video Hakkında Ek Bilgi Alın](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
 
@@ -228,11 +228,11 @@ async def Music_Stream(_, CallbackQuery):
     title, duration_min, duration_sec, thumbnail = get_yt_info_id(videoid)
     if duration_sec > DURATION_LIMIT:
         return await CallbackQuery.message.reply_text(
-            f"𝗦𝘂̈𝗿𝗲 𝗦𝗶𝗻𝗶𝗿𝗶 𝗔𝘀̧𝗶𝗹𝗱𝗶\n│\n𝗜̇𝘇𝗶𝗻 𝗩𝗲𝗿𝗶𝗹𝗲𝗻 𝗦𝘂̈𝗿𝗲: **{DURATION_LIMIT_MIN}** 𝗱𝗮𝗸𝗶𝗸𝗮(s)\n│\n╰𝗔𝗹𝗶𝗻𝗮𝗻 𝗦𝘂̈𝗿𝗲: **{duration_min}** 𝗱𝗮𝗸𝗶𝗸𝗮(s)"
+            f"𝗦𝘂̈𝗿𝗲 𝗦𝗶𝗻𝗶𝗿𝗶 𝗔𝘀̧𝗶𝗹𝗱𝗶\n\n𝗜̇𝘇𝗶𝗻 𝗩𝗲𝗿𝗶𝗹𝗲𝗻 𝗦𝘂̈𝗿𝗲: **{DURATION_LIMIT_MIN}** 𝗱𝗮𝗸𝗶𝗸𝗮(s)\n\n𝗔𝗹𝗶𝗻𝗮𝗻 𝗦𝘂̈𝗿𝗲: **{duration_min}** 𝗱𝗮𝗸𝗶𝗸𝗮(s)"
         )
     await CallbackQuery.answer(f"İşleme alındı:- {title[:20]}", show_alert=True)
     mystic = await CallbackQuery.message.reply_text(
-        f"**{MUSIC_BOT_NAME}** İndiriyorum\n│\n📮 İsim: {title[:50]}\n│\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
+        f"**{MUSIC_BOT_NAME}** İndiriyorum\n│\n🎵 İsim: {title[:50]}\n│\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
     )
     downloaded_file = await loop.run_in_executor(
         None, download, videoid, mystic, title
@@ -377,7 +377,7 @@ async def slider_query_results(_, CallbackQuery):
         )
         med = InputMediaPhoto(
             media=thumb,
-            caption=f"📮 İsim: **{title}**\n\n⏳ Süre: **{duration_min}** Dakika\n\n__[Video Hakkında Ek Bilgi Alın](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"🎵 İsim: **{title}**\n\n⏳ Süre: **{duration_min}** Dakika\n\n__[Video Hakkında Ek Bilgi Alın](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
         )
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
@@ -400,7 +400,7 @@ async def slider_query_results(_, CallbackQuery):
         )
         med = InputMediaPhoto(
             media=thumb,
-            caption=f"📮 İsim: **{title}**\n\n⏳ Süre: **{duration_min}** Dakika\n\n__[Video Hakkında Ek Bilgi Alın](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"🎵 İsim: **{title}**\n\n⏳ Süre: **{duration_min}** Dakika\n\n__[Video Hakkında Ek Bilgi Alın](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
         )
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
