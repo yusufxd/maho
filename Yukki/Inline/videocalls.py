@@ -16,7 +16,7 @@ def choose_markup(videoid, duration, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="❌ Kapatınız",
+                text="❌ Çıkış",
                 callback_data=f"forceclose {videoid}|{user_id}",
             )
         ],
@@ -58,11 +58,11 @@ def stream_quality_markup(videoid, duration, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="🔙 Geri Git",
+                text="🔙 Geri",
                 callback_data=f"gback_list_chose_stream {videoid}|{duration}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="❌ Aramayı Kapat",
+                text="❌ Çıkış",
                 callback_data=f"forceclose {videoid}|{user_id}",
             ),
         ],
