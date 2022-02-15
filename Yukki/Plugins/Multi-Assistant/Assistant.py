@@ -54,7 +54,7 @@ async def awaiting_message(client, message):
         )
         return await client.block_user(user_id)
     await message.reply_text(
-        f"Merhaba, ben. {MUSIC_BOT_NAME}'s Yardımcısı.\n\nBurada istenmeyen posta göndermeyin , aksi takdirde engellenirsiniz.\nDaha fazla Yardım başlangıcı için :- @{BOT_USERNAME}"
+        f"Merhaba, ben. {MUSIC_BOT_NAME}'s Yardımcısı.\n\nBurada istenmeyen posta göndermeyin , aksi takdirde engellenirsiniz.\nDaha fazla Yardım bilgisi için sahibim @Mahoaga ile iletişime geçiniz."
     )
 
 
