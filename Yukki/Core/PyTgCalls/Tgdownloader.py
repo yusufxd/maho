@@ -31,7 +31,7 @@ async def telegram_download(message, mystic):
             completed_size = bytes(current)
             speed = bytes(speed)
             text = f"""
-**{MUSIC_BOT_NAME} 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺 𝗠𝗲𝗱𝘆𝗮 𝗜̇𝗻𝗱𝗶𝗿𝗶𝗰𝗶𝘀𝗶**
+**{MUSIC_BOT_NAME} Telegram Medya İndiricisi**
 
 **Toplam Dosya Boyutu:** {total_size}
 **Tamamlandı:** {completed_size}
