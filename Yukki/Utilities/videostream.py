@@ -52,7 +52,7 @@ async def start_stream_video(message, file, title, mystic):
         final_output = await message.reply_photo(
             photo="Utils/Telegram.JPEG",
             caption=(
-                f"🎬<b>__𝗩𝗶𝗱𝗲𝗼:__ </b> [𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺 𝗬𝗼𝗹𝘂𝘆𝗹𝗮 𝗩𝗲𝗿𝗶𝗹𝗲𝗻 𝗩𝗶𝗱𝗲𝗼]({link})\n│\n╰👨‍💻<b>__𝐓𝐚𝐥𝐞𝐩 𝐄𝐝𝐞𝐧:__ </b>{message.from_user.mention} \n│\n╰🚧<b>__𝐒𝐢𝐫𝐚𝐲𝐚 𝐀𝐥𝐢𝐧𝐝𝐢:__</b> <b>#{position}!</b>"
+                f"🎬<b>__Video:__ </b> [Telegram tarafından verilen video]({link})\n\n👤<b>__Talep eden:__ </b>{message.from_user.mention} \n\n🚧<b>__Kuyruğa Eklendi:__</b> <b>#{position}!</b>"
             ),
             reply_markup=audio_markup2,
         )
@@ -61,7 +61,7 @@ async def start_stream_video(message, file, title, mystic):
     else:
         if not await join_video_stream(message.chat.id, file, 720):
             return await mystic.edit(
-                "𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁𝗲 𝗞𝗮𝘁𝗶𝗹𝗶𝗿𝗸𝗲𝗻 𝗛𝗮𝘁𝗮 𝗢𝗹𝘂𝘀̧𝘁𝘂. 𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁𝗶𝗻 𝗘𝘁𝗸𝗶𝗻 𝗼𝗹𝗱𝘂𝗴̆𝘂𝗻𝗱𝗮𝗻 𝗲𝗺𝗶𝗻 𝗼𝗹𝘂𝗻."
+                "Sesli Sohbete Katılırken Hata Oluştu. Sesli Sohbetin Olduğundan Emin Olunuz."
             )
         get_queue[message.chat.id] = []
         got_queue = get_queue.get(message.chat.id)
@@ -75,7 +75,7 @@ async def start_stream_video(message, file, title, mystic):
         await add_active_video_chat(message.chat.id)
         buttons = secondary_markup2("Smex1", message.from_user.id)
         await mystic.delete()
-        cap = f"🎥<b>__𝗢𝘆𝗻𝗮𝘁𝗶𝗹𝗶𝘆𝗼𝗿:__ </b> [𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺 𝗬𝗼𝗹𝘂𝘆𝗹𝗮 𝗩𝗲𝗿𝗶𝗹𝗲𝗻 𝗩𝗶𝗱𝗲𝗼]({link})\n│\n╰👨‍💻**__𝐓𝐚𝐥𝐞𝐩 𝐄𝐝𝐞𝐧:__** {message.from_user.mention}"
+        cap = f"🎬<b>__Oynatılıyor:__ </b> [Telegram Tarafından Desteklenen Video]({link})\n\n👤**__Talep eden:__** {message.from_user.mention}"
         final_output = await message.reply_photo(
             photo="Utils/Telegram.JPEG",
             reply_markup=InlineKeyboardMarkup(buttons),
@@ -112,13 +112,13 @@ async def start_live_stream(
         CallbackQuery.message.chat.id, link, quality
     ):
         return await CallbackQuery.message.reply_text(
-            f"𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁𝗲 𝗞𝗮𝘁𝗶𝗹𝗶𝗿𝗸𝗲𝗻 𝗛𝗮𝘁𝗮 𝗢𝗹𝘂𝘀̧𝘁𝘂."
+            f"Sesli Sohbete Katılırken Hata Oluştu."
         )
     await music_on(CallbackQuery.message.chat.id)
     await add_active_chat(CallbackQuery.message.chat.id)
     await add_active_video_chat(CallbackQuery.message.chat.id)
     buttons = secondary_markup2(videoid, CallbackQuery.from_user.id)
-    cap = f"**𝗖𝗮𝗻𝗹𝗶 𝗬𝗮𝘆𝗶𝗻**\n│\n╰🎥<b>__𝗢𝘆𝗻𝗮𝘁𝗶𝗹𝗶𝘆𝗼𝗿:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n│\n╰💡<b>__𝗕𝗶𝗹𝗴𝗶:__</b> [𝗘𝗸 𝗕𝗶𝗹𝗴𝗶](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n│\n╰👨‍💻**__𝐓𝐚𝐥𝐞𝐩 𝐄𝐝𝐞𝐧:__** {CallbackQuery.from_user.mention}"
+    cap = f"**Canlı yayın**\n\n🎬<b>__Oynatılıyor:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n\n💡<b>__Bilgi:__</b> [Ek bilgi](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n\n👤**__Talep eden:__** {CallbackQuery.from_user.mention}"
     final_output = await CallbackQuery.message.reply_photo(
         photo=thumb,
         reply_markup=InlineKeyboardMarkup(buttons),
@@ -172,7 +172,7 @@ async def start_video_stream(
         final_output = await CallbackQuery.message.reply_photo(
             photo=thumb,
             caption=(
-                f"🎬<b>𝗩𝗶𝗱𝗲𝗼:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n│\n╰⏳<b>__𝗦𝘂𝗿𝗲:__</b> {duration_min} \n│\n╰💡<b>__𝗕𝗶𝗹𝗴𝗶:__</b> [𝗘𝗸 𝗕𝗶𝗹𝗴𝗶](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n│\n╰👨‍💻<b>__𝐓𝐚𝐥𝐞𝐩 𝐄𝐝𝐞𝐧:__ </b>{CallbackQuery.from_user.mention} \n│\n╰🚧<b>__𝐒𝐢𝐫𝐚𝐲𝐚 𝐀𝐥𝐢𝐧𝐝𝐢:__</b> <b>#{position}!</b>"
+                f"🎬<b>Video:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n\n⏳ <b>__Süre:__</b> {duration_min} \n\n 💡<b>__Bilgi:__</b> [Ek bilgi](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n\n👨‍💻<b>__Talep eden:__ </b>{CallbackQuery.from_user.mention} \n\n🚧 <b>__Kuyruğa Eklendi:__</b> <b>#{position}!</b>"
             ),
             reply_markup=InlineKeyboardMarkup(buttons),
         )
@@ -184,7 +184,7 @@ async def start_video_stream(
             CallbackQuery.message.chat.id, link, quality
         ):
             return await CallbackQuery.message.reply_text(
-                f"𝗦𝗲𝘀𝗹𝗶 𝗦𝗼𝗵𝗯𝗲𝘁𝗲 𝗞𝗮𝘁𝗶𝗹𝗶𝗿𝗸𝗲𝗻 𝗛𝗮𝘁𝗮 𝗢𝗹𝘂𝘀̧𝘁𝘂."
+                f"Sesli Sohbete Katılırken Hata Oluştu."
             )
         get_queue[CallbackQuery.message.chat.id] = []
         got_queue = get_queue.get(CallbackQuery.message.chat.id)
@@ -200,7 +200,7 @@ async def start_video_stream(
         buttons = primary_markup(
             videoid, CallbackQuery.from_user.id, duration_min, duration_min
         )
-        cap = f"**𝗩𝗶𝗱𝗲𝗼 𝗔𝗸𝗶𝘀̧𝗶**\n│\n╰🎥<b>__𝗢𝘆𝗻𝗮𝘁𝗶𝗹𝗶𝘆𝗼𝗿:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n│\n╰💡<b>__𝗕𝗶𝗹𝗴𝗶:__</b> [𝗘𝗸 𝗕𝗶𝗹𝗴𝗶](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n│\n╰👨‍💻**__𝐓𝐚𝐥𝐞𝐩 𝐄𝐝𝐞𝐧:__** {CallbackQuery.from_user.mention}"
+        cap = f"**Video**\n\n 🎬<b>__Oynatılıyor:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n\n 💡<b>__Bilgi:__</b> [Ek bilgi](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n\n👤**__Talep eden:__** {CallbackQuery.from_user.mention}"
         final_output = await CallbackQuery.message.reply_photo(
             photo=thumb,
             reply_markup=InlineKeyboardMarkup(buttons),
