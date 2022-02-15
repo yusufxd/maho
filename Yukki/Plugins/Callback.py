@@ -70,11 +70,11 @@ async def admin_risghts(_, CallbackQuery):
         await music_off(chat_id)
         await pause_stream(chat_id)
         await CallbackQuery.message.reply_text(
-            f"🎧 Voicechat Paused by {CallbackQuery.from_user.mention}!",
+            f"🎧 Sesli sohbet Duraklatıldı {CallbackQuery.from_user.mention}!",
             reply_markup=audio_markup2,
         )
         await CallbackQuery.message.delete()
-        await CallbackQuery.answer("Paused", show_alert=True)
+        await CallbackQuery.answer("Duraklatıldı", show_alert=True)
     if command == "resumecb":
         if await is_music_playing(chat_id):
             return await CallbackQuery.answer(
@@ -83,11 +83,11 @@ async def admin_risghts(_, CallbackQuery):
         await music_on(chat_id)
         await resume_stream(chat_id)
         await CallbackQuery.message.reply_text(
-            f"🎧 Sesli sohbet Tarafından Devam Edildi {CallbackQuery.from_user.mention}!",
+            f"🎧 Sesli sohbet Devam ettirildi {CallbackQuery.from_user.mention}!",
             reply_markup=audio_markup2,
         )
         await CallbackQuery.message.delete()
-        await CallbackQuery.answer("Resumed", show_alert=True)
+        await CallbackQuery.answer("Devam", show_alert=True)
     if command == "stopcb":
         if CallbackQuery.message.chat.id not in db_mem:
             db_mem[CallbackQuery.message.chat.id] = {}
@@ -105,7 +105,7 @@ async def admin_risghts(_, CallbackQuery):
             reply_markup=audio_markup2,
         )
         await CallbackQuery.message.delete()
-        await CallbackQuery.answer("Stopped", show_alert=True)
+        await CallbackQuery.answer("Durdu", show_alert=True)
     if command == "skipcb":
         if CallbackQuery.message.chat.id not in db_mem:
             db_mem[CallbackQuery.message.chat.id] = {}
@@ -133,7 +133,7 @@ async def admin_risghts(_, CallbackQuery):
             aud = 0
             if str(finxx) == "raw":
                 await CallbackQuery.message.delete()
-                await CallbackQuery.answer("Skipped!", show_alert=True)
+                await CallbackQuery.answer("Atlatıldı!", show_alert=True)
                 await skip_stream(chat_id, videoid)
                 afk = videoid
                 title = db_mem[videoid]["title"]
@@ -260,7 +260,7 @@ async def admin_risghts(_, CallbackQuery):
             else:
                 await CallbackQuery.message.delete()
                 await CallbackQuery.answer(
-                    "Skipped! Playlist Playing....", show_alert=True
+                    "Atlatıldı ! Çalma Listesi Çalınıyor...", show_alert=True
                 )
                 mystic = await CallbackQuery.message.reply_text(
                     f"**{MUSIC_BOT_NAME} Çalma Listesi İşlevi**\n\n__Çalma Listesinden Sonraki Müzikleri İndirme....__\n\nKullanılan Düğme :- {CallbackQuery.from_user.mention}"
