@@ -30,7 +30,7 @@ def url_markup(videoid, duration, user_id, query, query_type):
                 callback_data=f"Search {query}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="❌ Menüden Çık",
+                text="❌ Çıkış",
                 callback_data=f"forceclose {query}|{user_id}",
             ),
         ],
@@ -52,7 +52,7 @@ def url_markup2(videoid, duration, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="❌ Menüden çık",
+                text="❌ Çıkış",
                 callback_data=f"forceclose {videoid}|{user_id}",
             )
         ],
@@ -77,21 +77,21 @@ def search_markup(
     buttons = [
         [
             InlineKeyboardButton(
-                text="⓵", callback_data=f"Yukki {ID1}|{duration1}|{user_id}"
+                text="1️⃣", callback_data=f"Yukki {ID1}|{duration1}|{user_id}"
             ),
             InlineKeyboardButton(
-                text="⓶", callback_data=f"Yukki {ID2}|{duration2}|{user_id}"
+                text="2️⃣", callback_data=f"Yukki {ID2}|{duration2}|{user_id}"
             ),
             InlineKeyboardButton(
-                text="⓷", callback_data=f"Yukki {ID3}|{duration3}|{user_id}"
+                text="3️⃣", callback_data=f"Yukki {ID3}|{duration3}|{user_id}"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="⓸", callback_data=f"Yukki {ID4}|{duration4}|{user_id}"
+                text="4️⃣", callback_data=f"Yukki {ID4}|{duration4}|{user_id}"
             ),
             InlineKeyboardButton(
-                text="⓹", callback_data=f"Yukki {ID5}|{duration5}|{user_id}"
+                text="5️⃣", callback_data=f"Yukki {ID5}|{duration5}|{user_id}"
             ),
         ],
         [
@@ -126,25 +126,25 @@ def search_markup2(
     buttons = [
         [
             InlineKeyboardButton(
-                text="⓺",
+                text="6️⃣",
                 callback_data=f"Yukki {ID6}|{duration6}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="⓻",
+                text="7️⃣",
                 callback_data=f"Yukki {ID7}|{duration7}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="⓼",
+                text="8️⃣",
                 callback_data=f"Yukki {ID8}|{duration8}|{user_id}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="⓽",
+                text="9️⃣",
                 callback_data=f"Yukki {ID9}|{duration9}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="⓾",
+                text="🔟",
                 callback_data=f"Yukki {ID10}|{duration10}|{user_id}",
             ),
         ],
@@ -166,10 +166,10 @@ def search_markup2(
 def secondary_markup(videoid, user_id):
     buttons = [
         [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="❚❚", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="➽", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="☐", callback_data=f"stopcb"),
+            InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
+            InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
+            InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
+            InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
         ],
         [
             InlineKeyboardButton(
@@ -184,10 +184,10 @@ def secondary_markup(videoid, user_id):
 def secondary_markup2(videoid, user_id):
     buttons = [
         [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="❚❚", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="➽", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="☐", callback_data=f"stopcb"),
+            InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
+            InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
+            InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
+            InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
         ],
         [
             InlineKeyboardButton(text="❌ Menüden çık", callback_data=f"close"),
@@ -208,10 +208,10 @@ def primary_markup(videoid, user_id, current_time, total_time):
             )
         ],
         [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="❚❚", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="➽", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="☐", callback_data=f"stopcb"),
+            InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
+            InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
+            InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
+            InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
         ],
         [
             InlineKeyboardButton(
@@ -232,10 +232,10 @@ def timer_markup(videoid, user_id, current_time, total_time):
             )
         ],
         [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="❚❚", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="➽", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="☐", callback_data=f"stopcb"),
+            InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
+            InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
+            InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
+            InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
         ],
         [
             InlineKeyboardButton(
@@ -259,10 +259,10 @@ def audio_markup(videoid, user_id, current_time, total_time):
             )
         ],
         [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="❚❚", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="➽", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="☐", callback_data=f"stopcb"),
+            InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
+            InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
+            InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
+            InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
         ],
         [InlineKeyboardButton(text="❌ Menüden çık", callback_data=f"close")],
     ]
@@ -278,10 +278,10 @@ def audio_timer_markup_start(videoid, user_id, current_time, total_time):
             )
         ],
         [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="❚❚", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="➽", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="☐", callback_data=f"stopcb"),
+            InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
+            InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
+            InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
+            InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
         ],
         [InlineKeyboardButton(text="❌ Menüden çık", callback_data=f"close")],
     ]
@@ -291,10 +291,10 @@ def audio_timer_markup_start(videoid, user_id, current_time, total_time):
 audio_markup2 = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="▷", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="❚❚", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="➽", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="☐", callback_data=f"stopcb"),
+            InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
+            InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
+            InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
+            InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
         ],
         [InlineKeyboardButton("❌ Menüden çık", callback_data="close")],
     ]
