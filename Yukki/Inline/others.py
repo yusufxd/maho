@@ -17,6 +17,16 @@ def others_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
+                text="📮 Sizin listeniz",
+                callback_data=f"your_playlist {videoid}|{user_id}",
+            ),
+            InlineKeyboardButton(
+                text="📮 Grup Listesiniz",
+                callback_data=f"group_playlist {videoid}|{user_id}",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
                 text="📥 Mp3~Video İndir",
                 callback_data=f"audio_video_download {videoid}|{user_id}",
             )
@@ -39,7 +49,7 @@ def download_markup(videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="🎵 Şarkı İndir",
+                text="🎵 Mp3 İndir",
                 callback_data=f"gets audio|{videoid}|{user_id}",
             ),
             InlineKeyboardButton(
