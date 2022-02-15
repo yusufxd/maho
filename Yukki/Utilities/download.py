@@ -134,7 +134,7 @@ async def get_formats(CallbackQuery, videoid, user_id, type):
                 ],
                 [
                     InlineKeyboardButton(
-                        text="⇠ Geri Git",
+                        text="🔙 Geri",
                         callback_data=f"good {videoid}|{user_id}",
                     ),
                     InlineKeyboardButton(
