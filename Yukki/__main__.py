@@ -110,13 +110,13 @@ async def initiate_bot():
             )
         except Exception as e:
             print(
-                "\nAssistant Account 1 has failed to access the log Channel. Make sure that you have added your Assistant to your log channel and promoted as admin!"
+                "\nYardımcı Hesap 1 günlük Kanalı'na erişemedi. Asistanınızı günlük kanalınıza eklediğinizden ve yönetici olarak terfi ettirdiğinizden emin olun!"
             )
             console.print(f"\n[red]Stopping Bot")
             return
         try:
-            await ASS_CLI_1.join_chat("OfficialYukki")
-            await ASS_CLI_1.join_chat("YukkiSupport")
+            await ASS_CLI_1.join_chat("Sohbetskyfall")
+            await ASS_CLI_1.join_chat("Sohbetdestek")
         except:
             pass
         console.print(f"├[red] Asistan 1 Olarak Başladı {ASSNAME1}!")
@@ -125,77 +125,77 @@ async def initiate_bot():
         try:
             await ASS_CLI_2.send_message(
                 LOG_GROUP_ID,
-                "<b>Congrats!! Assistant Client 2 has started successfully!</b>",
+                "<b>Tebrikler!! Yardımcı İstemci 2 başarıyla başlatıldı!</b>",
             )
         except Exception as e:
             print(
-                "\nAssistant Account 2 has failed to access the log Channel. Make sure that you have added your Assistant to your log channel and promoted as admin!"
+                "\nYardımcı Hesap 2 günlük Kanalı'na erişemedi. Asistanınızı günlük kanalınıza eklediğinizden ve yönetici olarak terfi ettirdiğinizden emin olun!"
             )
             console.print(f"\n[red]Stopping Bot")
             return
         try:
-            await ASS_CLI_2.join_chat("OfficialYukki")
-            await ASS_CLI_2.join_chat("YukkiSupport")
+            await ASS_CLI_2.join_chat("Sohbetskyfall")
+            await ASS_CLI_2.join_chat("Sohbetdestek")
         except:
             pass
-        console.print(f"├[red] Assistant 2 Started as {ASSNAME2}!")
+        console.print(f"├[red] Asistan 2 Olarak Başladı {ASSNAME2}!")
         console.print(f"├[green] ID :- {ASSID2}!")
     if STRING3 != "None":
         try:
             await ASS_CLI_3.send_message(
                 LOG_GROUP_ID,
-                "<b>Congrats!! Assistant Client 3 has started successfully!</b>",
+                "<b>Tebrikler!! Yardımcı İstemci 3 başarıyla başlatıldı!</b>",
             )
         except Exception as e:
             print(
-                "\nAssistant Account 3 has failed to access the log Channel. Make sure that you have added your Assistant to your log channel and promoted as admin!"
+                "\nYardımcı Hesap 3, Kanal günlüğüne erişemedi. Asistanınızı günlük kanalınıza eklediğinizden ve yönetici olarak terfi ettirdiğinizden emin olun!"
             )
             console.print(f"\n[red]Stopping Bot")
             return
         try:
-            await ASS_CLI_3.join_chat("OfficialYukki")
-            await ASS_CLI_3.join_chat("YukkiSupport")
+            await ASS_CLI_3.join_chat("Sohbetskyfall")
+            await ASS_CLI_3.join_chat("Sohbetdestek")
         except:
             pass
-        console.print(f"├[red] Assistant 3 Started as {ASSNAME3}!")
+        console.print(f"├[red] Asistan 3 Olarak Başladı {ASSNAME3}!")
         console.print(f"├[green] ID :- {ASSID3}!")
     if STRING4 != "None":
         try:
             await ASS_CLI_4.send_message(
                 LOG_GROUP_ID,
-                "<b>Congrats!! Assistant Client 4 has started successfully!</b>",
+                "<b>Tebrikler!! Yardımcı İstemci 4 başarıyla başlatıldı!</b>",
             )
         except Exception as e:
             print(
-                "\nAssistant Account 4 has failed to access the log Channel. Make sure that you have added your Assistant to your log channel and promoted as admin!"
+                "\nYardımcı Hesap 4 günlük Kanalı'na erişemedi. Asistanınızı günlük kanalınıza eklediğinizden ve yönetici olarak terfi ettirdiğinizden emin olun!"
             )
             console.print(f"\n[red]Stopping Bot")
             return
         try:
-            await ASS_CLI_4.join_chat("OfficialYukki")
-            await ASS_CLI_4.join_chat("YukkiSupport")
+            await ASS_CLI_4.join_chat("Sohbetskyfall")
+            await ASS_CLI_4.join_chat("Sohbetdestek")
         except:
             pass
-        console.print(f"├[red] Assistant 4 Started as {ASSNAME4}!")
+        console.print(f"├[red] Asistan 4 Olarak Başladı {ASSNAME4}!")
         console.print(f"├[green] ID :- {ASSID4}!")
     if STRING5 != "None":
         try:
             await ASS_CLI_5.send_message(
                 LOG_GROUP_ID,
-                "<b>Congrats!! Assistant Client 5 has started successfully!</b>",
+                "<b>Tebrikler!! Yardımcı İstemci 5 başarıyla başlatıldı!</b>",
             )
         except Exception as e:
             print(
-                "\nAssistant Account 5 has failed to access the log Channel. Make sure that you have added your Assistant to your log channel and promoted as admin!"
+                "\nYardımcı Hesap 5 günlük Kanalı'na erişemedi. Asistanınızı günlük kanalınıza eklediğinizden ve yönetici olarak terfi ettirdiğinizden emin olun!"
             )
             console.print(f"\n[red]Stopping Bot")
             return
         try:
-            await ASS_CLI_5.join_chat("OfficialYukki")
-            await ASS_CLI_5.join_chat("YukkiSupport")
+            await ASS_CLI_5.join_chat("Sohbetskyfall")
+            await ASS_CLI_5.join_chat("Sohbetdestek")
         except:
             pass
-        console.print(f"├[red] Assistant 5 Started as {ASSNAME5}!")
+        console.print(f"├[red] Asistan 5 Olarak Başladı {ASSNAME5}!")
         console.print(f"├[green] ID :- {ASSID5}!")
     if LOG_SESSION != "None":
         try:
@@ -210,8 +210,8 @@ async def initiate_bot():
             console.print(f"\n[red]Stopping Bot")
             return
         try:
-            await LOG_CLIENT.join_chat("OfficialYukki")
-            await LOG_CLIENT.join_chat("YukkiSupport")
+            await LOG_CLIENT.join_chat("Sohbetskyfall")
+            await LOG_CLIENT.join_chat("Sohbetdestek")
         except:
             pass
     console.print(f"└[red] Efsane Müzik Bot Önyükleme tamamlandı.")
