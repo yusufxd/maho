@@ -5,7 +5,7 @@ import sys
 import traceback
 from html import escape
 from inspect import getfullargspec
-from io  import StringIO
+from io import StringIO
 from time import time
 
 from pyrogram import filters
