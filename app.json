@@ -110,7 +110,7 @@
     },
     "UPSTREAM_REPO": {
       "description": "Eğer bunu bilmiyorsan, olduğu gibi git.",
-      "value": "https://github.com/Mehmetbaba06/maho",
+      "value": "https://github.com/yusufxd/maho",
       "required": true
     },
     "UPSTREAM_BRANCH": {
